@@ -1,1 +1,157 @@
-<p>navbar works!</p>
+<nav class="bg-white text-gray-900 shadow-md">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-8">
+        <!-- Logo -->
+        <div>
+          <a href="#" class="text-xl font-bold">Voyages Novicom</a>
+        </div>
+      </div>
+
+      <!-- Conteneur pour les éléments de droite (menu, icône, bouton mobile) -->
+      <div class="flex items-center space-x-4">
+        <!-- Menu pour les écrans larges -->
+        <div class="hidden md:block">
+          <ul class="flex items-center space-x-6">
+            <li><a routerLink="/" routerLinkActive="text-blue-600 font-bold" [routerLinkActiveOptions]="{exact: true}" class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300" i18n="@@navbar.home">Accueil</a>
+            </li>
+            <li><a routerLink="/bienvenue" routerLinkActive="text-blue-600 font-bold" class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300" i18n="@@navbar.welcome">Bienvenue</a>
+            </li>
+            <!-- Menu déroulant "Où voyager" -->
+            <li class="relative group">
+              <a routerLink="/ou-voyager" routerLinkActive="text-blue-600 font-bold"
+                class="relative hover:text-blue-600 flex items-center cursor-pointer after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+                [routerLinkActiveOptions]="{exact: false}" i18n="@@navbar.whereToTravel">
+                <span>{{ selectedContinentDisplay }}</span>
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </a>
+              <div class="absolute left-0 top-full z-10 hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-48">
+                <ng-container *ngFor="let continent of continents">
+                  <a (click)="onContinentSelected(continent.key, continent.color)"
+                    (mouseenter)="onContinentHover(continent, true)"
+                    (mouseleave)="onContinentHover(continent, false)"
+                    [ngClass]="{
+                      'font-bold': selectedContinentKey === continent.key
+                    }"
+                    [style.background-color]="(selectedContinentKey === continent.key || hoveredContinentKey === continent.key) ? continent.color : ''"
+                    [style.color]="(selectedContinentKey === continent.key || hoveredContinentKey === continent.key) ? 'white' : 'rgb(17 24 39)'"
+                    class="block px-4 py-2 text-gray-900 cursor-pointer">
+                    {{ currentLang === 'en' ? continent.nameEn : continent.nameFr }}
+                  </a>
+                </ng-container>
+              </div>
+            </li>
+            <li><a routerLink="/voyage-mystere" routerLinkActive="text-blue-600 font-bold"
+                class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+                i18n="@@navbar.mysteryTrip">Voyage Mystère</a></li>
+            <li><a routerLink="/tours" routerLinkActive="text-blue-600 font-bold"
+                class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+                i18n="@@navbar.tours">Tours</a></li>
+            <li><a routerLink="/croisieres" routerLinkActive="text-blue-600 font-bold"
+                class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+                i18n="@@navbar.cruises">Croisières</a></li>
+            <li>
+
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 01-9-9m-9 9a9 9 0 019-9" />
+              </svg>
+
+            </li>
+            <li>
+              <a routerLink="/mon-compte"
+                class="bg-[oklch(29.3%_0.066_243.157)] hover:bg-[oklch(26%_0.066_243.157)] text-white font-bold py-2 px-4 rounded"
+                i18n="@@navbar.myAccount">Mon Compte</a>
+            </li>
+            <!-- Language Selector -->
+            <li class="relative group">
+              <button class="flex items-center text-gray-900 hover:text-blue-600 focus:outline-none" i18n="@@navbar.language">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5.61l-1.4 4H4l-1.4-4H1V7h3.21L5 4h2l-1.21 3H7v2zm6.79-2H15V9h-3.21L12 12h2l-1.4 4H12l-1.4-4H9V7h3.21z" clip-rule="evenodd" />
+                </svg>
+                <span>{{ currentLang === 'en' ? 'English' : 'Français' }}</span>
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute right-0 top-full z-10 hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-28">
+                <a (click)="changeLanguage('en')"
+                  class="block px-4 py-2 text-gray-900 hover:bg-gray-100 cursor-pointer">English</a>
+                <a (click)="changeLanguage('fr')"
+                  class="block px-4 py-2 text-gray-900 hover:bg-gray-100 cursor-pointer">Français</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bouton pour menu mobile -->
+        <div class="md:hidden">
+          <button (click)="toggleMobileMenu()" class="outline-none mobile-menu-button">
+            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Menu mobile -->
+    <div class="mobile-menu mt-4" [class.hidden]="!isMobileMenuOpen">
+      <ul class="flex flex-col space-y-2">
+        <li><a routerLink="/" routerLinkActive="text-blue-600 font-bold" [routerLinkActiveOptions]="{exact: true}"
+            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded" i18n="@@navbar.home.mobile">Accueil</a></li>
+        <li><a routerLink="/bienvenue" routerLinkActive="text-blue-600 font-bold"
+            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded" i18n="@@navbar.welcome.mobile">Bienvenue</a></li>
+        <li><a routerLink="/ou-voyager" routerLinkActive="text-blue-600 font-bold"
+            class="block py-2 px-4 text-sm font-semibold" [routerLinkActiveOptions]="{exact: false}"
+            i18n="@@navbar.whereToTravel.mobile">{{ selectedContinentDisplay }}</a></li>
+        <!-- Sous-menu mobile -->
+        <li class="pl-8">
+          <ul class="flex flex-col space-y-1">
+            <ng-container *ngFor="let continent of continents">
+              <a (click)="onContinentSelected(continent.key, continent.color)"
+                (mouseenter)="onContinentHover(continent, true)"
+                (mouseleave)="onContinentHover(continent, false)"
+                [ngClass]="{
+                  'font-bold': selectedContinentKey === continent.key
+                }"
+                [style.background-color]="(selectedContinentKey === continent.key || hoveredContinentKey === continent.key) ? continent.color : ''"
+                [style.color]="(selectedContinentKey === continent.key || hoveredContinentKey === continent.key) ? 'white' : 'rgb(17 24 39)'"
+                class="block py-1 text-sm rounded cursor-pointer">
+                {{ currentLang === 'en' ? continent.nameEn : continent.nameFr }}
+              </a>
+            </ng-container>
+          </ul>
+        </li>
+        <li><a routerLink="/voyage-mystere" routerLinkActive="text-blue-600 font-bold"
+            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded" i18n="@@navbar.mysteryTrip.mobile">Voyage
+            Mystère</a></li>
+        <li><a routerLink="/tours" routerLinkActive="text-blue-600 font-bold"
+            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded" i18n="@@navbar.tours.mobile">Tours</a></li>
+        <li><a routerLink="/croisieres" routerLinkActive="text-blue-600 font-bold"
+            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded" i18n="@@navbar.cruises.mobile">Croisières</a></li>
+        <li class="flex justify-center py-2">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 01-9-9m-9 9a9 9 0 019-9" />
+          </svg>
+
+        </li>
+        <li>
+          <a routerLink="/mon-compte"
+            class="block w-full text-left bg-[oklch(29.3%_0.066_243.157)] hover:bg-[oklch(26%_0.066_243.157)] text-white font-bold py-2 px-4 rounded"
+            i18n="@@navbar.myAccount.mobile">Mon Compte</a>
+        </li>
+        <!-- Mobile Language Selector -->
+        <li>
+          <a (click)="changeLanguage('en')"
+            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded cursor-pointer">English</a>
+        </li>
+        <li>
+          <a (click)="changeLanguage('fr')"
+            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded cursor-pointer">Français</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

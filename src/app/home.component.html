@@ -1,0 +1,55 @@
+<div class="container mx-auto p-8">
+  <h2 class="text-3xl font-bold text-center mb-8">Nos destinations populaires</h2>
+
+  <!-- Champ de recherche -->
+  <div class="mb-8 max-w-md mx-auto">
+    <input type="text" 
+           [(ngModel)]="searchTerm" 
+           (input)="filterDestinations()"
+           placeholder="Rechercher une destination (ex: Rome, Japon...)"
+           class="w-full px-4 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-color">
+  </div>
+
+  <!-- Grille de vignettes -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Boucle sur chaque destination -->
+    <div *ngFor="let dest of filteredDestinations" class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+      
+      <!-- Image de la vignette -->
+      <img [src]="dest.imageUrl" [alt]="'Image de ' + dest.location" class="w-full h-56 object-cover">
+
+      <!-- Contenu de la vignette -->
+      <div class="p-6">
+        
+        <!-- Lieu et Pays -->
+        <h3 class="text-2xl font-bold text-gray-800">{{ dest.location }}</h3>
+        <p class="text-sm text-gray-600 mb-3">{{ dest.country }}</p>
+
+        <!-- Étoiles de satisfaction -->
+        <div class="flex items-center mb-4">
+          <ng-container *ngFor="let _ of getFilledStars(dest.rating)">
+            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+          </ng-container>
+          <ng-container *ngFor="let _ of getEmptyStars(dest.rating)">
+            <svg class="w-5 h-5 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+          </ng-container>
+        </div>
+
+        <!-- Jours et Prix -->
+        <div class="flex justify-between items-center">
+          <span class="text-gray-700 font-medium">{{ dest.days }} jours</span>
+          <span class="text-xl font-bold text-secondary-color">{{ dest.price }} €</span>
+        </div>
+
+        <!-- Bouton Commander -->
+        <div class="mt-6 text-center">
+          <button (click)="order(dest)" class="bg-primary-color text-white font-bold py-2 px-6 rounded-full hover:bg-primary-dark-color transition-colors duration-300">
+            Commander
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

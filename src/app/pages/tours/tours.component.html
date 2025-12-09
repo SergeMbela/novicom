@@ -1,0 +1,527 @@
+<div class="container mx-auto p-8">
+  <h2 class="text-3xl font-bold text-center mb-8">Nos Tours Organisés</h2>
+
+  <!-- Barre d'onglets -->
+  <div class="mb-4 border-b border-gray-200">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" role="tablist">
+      <li class="mr-2" role="presentation">
+        <button (click)="selectTab('Afrique')" [ngClass]="{'border-blue-600 text-blue-600': activeTab === 'Afrique', 'border-transparent hover:text-gray-600 hover:border-gray-300': activeTab !== 'Afrique'}" class="inline-block p-4 border-b-2 rounded-t-lg" type="button" role="tab">Afrique</button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button (click)="selectTab('Amérique')" [ngClass]="{'border-blue-600 text-blue-600': activeTab === 'Amérique', 'border-transparent hover:text-gray-600 hover:border-gray-300': activeTab !== 'Amérique'}" class="inline-block p-4 border-b-2 rounded-t-lg" type="button" role="tab">Amérique</button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button (click)="selectTab('Asie')" [ngClass]="{'border-blue-600 text-blue-600': activeTab === 'Asie', 'border-transparent hover:text-gray-600 hover:border-gray-300': activeTab !== 'Asie'}" class="inline-block p-4 border-b-2 rounded-t-lg" type="button" role="tab">Asie</button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button (click)="selectTab('Europe')" [ngClass]="{'border-blue-600 text-blue-600': activeTab === 'Europe', 'border-transparent hover:text-gray-600 hover:border-gray-300': activeTab !== 'Europe'}" class="inline-block p-4 border-b-2 rounded-t-lg" type="button" role="tab">Europe</button>
+      </li>
+      <li role="presentation">
+        <button (click)="selectTab('Océanie')" [ngClass]="{'border-blue-600 text-blue-600': activeTab === 'Océanie', 'border-transparent hover:text-gray-600 hover:border-gray-300': activeTab !== 'Océanie'}" class="inline-block p-4 border-b-2 rounded-t-lg" type="button" role="tab">Océanie</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Contenu des onglets -->
+  <div id="tabContent">
+    <div *ngIf="activeTab === 'Afrique'" class="p-4 rounded-lg bg-gray-50">
+      <!-- Tour Égypte -->
+      <div class="flex flex-col lg:flex-row gap-8 mb-12">
+        <!-- Fiche pour l'Égypte -->
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white flex-shrink-0">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?q=80&w=1974&auto=format&fit=crop" alt="Pyramides d'Égypte">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-4 text-gray-800 flex items-center">
+              <span class="fi fi-eg mr-3"></span>Égypte
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Capitale:</span> Le Caire
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Coordonnées:</span> 30.04° N, 31.23° E
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Langue:</span> Arabe
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Surface:</span> 1 010 408 km²
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Devise:</span> Livre égyptienne (EGP)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Aéroport:</span> Le Caire (CAI)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Indicatif:</span> +20
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline du voyage -->
+        <div class="flex-1 min-w-[280px]">
+          <h3 class="font-bold text-xl mb-4 text-gray-800">Itinéraire Suggéré (10 Jours)</h3>
+          <div class="relative border-l-2 border-orange-200 ml-3 pl-6 text-sm">
+            <!-- Jour 1-2 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1569097426112-48c5c450519d?q=80&w=1974&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-orange-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 1-2: Le Caire & Gizeh</p>
+              <p class="text-gray-600">Visite des Pyramides, du Sphinx et du Musée Égyptien.</p>
+            </div>
+            <!-- Jour 3-5 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1572089033979-931b5a3594d2?q=80&w=1932&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-orange-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 3-5: Croisière sur le Nil (Louxor)</p>
+              <p class="text-gray-600">Découverte des temples de Karnak et de Louxor, Vallée des Rois.</p>
+            </div>
+            <!-- Jour 6-7 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-orange-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 6-7: Edfou & Kom Ombo</p>
+              <p class="text-gray-600">Navigation et visite des temples dédiés à Horus et Sobek.</p>
+            </div>
+            <!-- Jour 8-9 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1620332372390-a8ac3c5832f2?q=80&w=1974&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-orange-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 8-9: Assouan</p>
+              <p class="text-gray-600">Visite du Haut Barrage, de l'Obélisque inachevé et du temple de Philae.</p>
+            </div>
+            <!-- Jour 10 -->
+            <div class="cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-orange-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jour 10: Départ</p>
+              <p class="text-gray-600">Vol de retour depuis Assouan ou Le Caire.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteneur de l'image -->
+        <div class="flex-1 min-w-[300px] flex items-center justify-center">
+          <img [src]="hoveredImage" 
+               alt="Aperçu du voyage" 
+               class="rounded-lg shadow-lg object-cover w-full h-auto max-h-[400px] transition-opacity duration-300 ease-in-out"
+               [ngClass]="{'opacity-0': isImageFading, 'opacity-100': !isImageFading}"
+          >
+        </div>
+      </div>
+
+      <!-- Séparateur -->
+      <hr class="my-12 border-gray-300">
+
+      <!-- Tour Maroc -->
+      <div class="flex flex-col lg:flex-row gap-8 mb-12">
+        <!-- Fiche pour le Maroc -->
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white flex-shrink-0">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1547234935-80c71472c4d4?q=80&w=2074&auto=format&fit=crop" alt="Ruelle à Marrakech, Maroc">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-4 text-gray-800 flex items-center">
+              <span class="fi fi-ma mr-3"></span>Maroc
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Capitale:</span> Rabat</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Coordonnées:</span> 34.02° N, 6.84° W</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Langues:</span> Arabe, Amazigh</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Surface:</span> 446 550 km²</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Devise:</span> Dirham (MAD)</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Aéroport:</span> Casablanca (CMN)</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Indicatif:</span> +212</p>
+            </div>
+          </div>
+        </div>
+        <!-- Timeline du voyage -->
+        <div class="flex-1 min-w-[280px]">
+          <h3 class="font-bold text-xl mb-4 text-gray-800">Cités Impériales (8 Jours)</h3>
+          <div class="relative border-l-2 border-red-200 ml-3 pl-6 text-sm">
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1559922462-916901a3b617?q=80&w=1974&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-red-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 1-2: Marrakech</p>
+              <p class="text-gray-600">Place Jemaa el-Fna, souks et Jardin Majorelle.</p>
+            </div>
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1594433533435-94001f5c4146?q=80&w=1974&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-red-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 3-4: Fès</p>
+              <p class="text-gray-600">Exploration de la médina, des tanneries et des madrasas.</p>
+            </div>
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1563899792-3d55169a65b2?q=80&w=1974&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-red-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jour 5: Chefchaouen</p>
+              <p class="text-gray-600">Découverte de la célèbre ville bleue.</p>
+            </div>
+            <div class="cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1558962504-7a6a7c1c3e3e?q=80&w=1964&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-red-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 6-8: Casablanca & Départ</p>
+              <p class="text-gray-600">Visite de la Mosquée Hassan II et vol de retour.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Conteneur de l'image -->
+        <div class="flex-1 min-w-[300px] flex items-center justify-center">
+          <img [src]="hoveredImage" alt="Aperçu du voyage" class="rounded-lg shadow-lg object-cover w-full h-auto max-h-[400px] transition-opacity duration-300 ease-in-out" [ngClass]="{'opacity-0': isImageFading, 'opacity-100': !isImageFading}">
+        </div>
+      </div>
+
+      <!-- Séparateur -->
+      <hr class="my-12 border-gray-300">
+
+      <!-- Tour Kenya -->
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Fiche pour le Kenya -->
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white flex-shrink-0">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1591151822353-85a093631933?q=80&w=2070&auto=format&fit=crop" alt="Girafe au Kenya">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-4 text-gray-800 flex items-center">
+              <span class="fi fi-ke mr-3"></span>Kenya
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Capitale:</span> Nairobi</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Coordonnées:</span> 1.29° S, 36.82° E</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Langues:</span> Swahili, Anglais</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Surface:</span> 580 367 km²</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Devise:</span> Shilling (KES)</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Aéroport:</span> Nairobi (NBO)</p>
+              <p class="text-gray-700 text-base"><span class="font-semibold w-28 inline-block">Indicatif:</span> +254</p>
+            </div>
+          </div>
+        </div>
+        <!-- Timeline du voyage -->
+        <div class="flex-1 min-w-[280px]">
+          <h3 class="font-bold text-xl mb-4 text-gray-800">Safari Aventure (9 Jours)</h3>
+          <div class="relative border-l-2 border-green-200 ml-3 pl-6 text-sm">
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1534998634486-28435c17a935?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 1-2: Nairobi</p>
+              <p class="text-gray-600">Parc National de Nairobi et Giraffe Centre.</p>
+            </div>
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1591151822353-85a093631933?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 3-5: Réserve du Masai Mara</p>
+              <p class="text-gray-600">Safari à la recherche du "Big Five" et grande migration.</p>
+            </div>
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1558554458-55281b25b3f1?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 6-7: Lac Nakuru</p>
+              <p class="text-gray-600">Observation des flamants roses et des rhinocéros.</p>
+            </div>
+            <div class="cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1516496636080-14fb872e1299?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 8-9: Amboseli & Départ</p>
+              <p class="text-gray-600">Vue sur le Kilimandjaro, troupeaux d'éléphants et vol retour.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Conteneur de l'image -->
+        <div class="flex-1 min-w-[300px] flex items-center justify-center">
+          <img [src]="hoveredImage" alt="Aperçu du voyage" class="rounded-lg shadow-lg object-cover w-full h-auto max-h-[400px] transition-opacity duration-300 ease-in-out" [ngClass]="{'opacity-0': isImageFading, 'opacity-100': !isImageFading}">
+        </div>
+      </div>
+    </div>
+    <div *ngIf="activeTab === 'Amérique'" class="p-4 rounded-lg bg-gray-50">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Fiche pour les États-Unis -->
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white flex-shrink-0">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1532664189809-02133fee698d?q=80&w=1932&auto=format&fit=crop" alt="Parc National de Yosemite, USA">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-4 text-gray-800 flex items-center">
+              <span class="fi fi-us mr-3"></span>États-Unis
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Capitale:</span> Washington D.C.
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Coordonnées:</span> 38.90° N, 77.03° W
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Langue:</span> Anglais
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Surface:</span> 9 833 520 km²
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Devise:</span> Dollar (USD)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Aéroport:</span> Dulles (IAD)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Indicatif:</span> +1
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline du voyage -->
+        <div class="flex-1 min-w-[280px]">
+          <h3 class="font-bold text-xl mb-4 text-gray-800">Rêve de l'Ouest (12 Jours)</h3>
+          <div class="relative border-l-2 border-blue-200 ml-3 pl-6 text-sm">
+            <!-- Jours 1-3 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1560200353-ce0a1b70815b?q=80&w=1974&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 1-3: Los Angeles</p>
+              <p class="text-gray-600">Découverte de Hollywood, Santa Monica et Beverly Hills.</p>
+            </div>
+            <!-- Jours 4-5 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1615038271423-77a3458937b1?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 4-5: Grand Canyon</p>
+              <p class="text-gray-600">Traversée de la Route 66 et exploration du parc national.</p>
+            </div>
+            <!-- Jours 6-7 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1605833552863-84b47647c43a?q=80&w=1964&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 6-7: Las Vegas</p>
+              <p class="text-gray-600">Le Strip, ses spectacles et ses lumières.</p>
+            </div>
+            <!-- Jours 8-10 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1541593459096-69733752c23a?q=80&w=1974&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 8-10: San Francisco</p>
+              <p class="text-gray-600">Golden Gate Bridge, Alcatraz et Fisherman's Wharf.</p>
+            </div>
+            <!-- Jour 11-12 -->
+            <div class="cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 11-12: Départ</p>
+              <p class="text-gray-600">Vol de retour depuis San Francisco.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteneur de l'image -->
+        <div class="flex-1 min-w-[300px] flex items-center justify-center">
+          <img [src]="hoveredImage" 
+               alt="Aperçu du voyage" 
+               class="rounded-lg shadow-lg object-cover w-full h-auto max-h-[400px] transition-opacity duration-300 ease-in-out"
+               [ngClass]="{'opacity-0': isImageFading, 'opacity-100': !isImageFading}"
+          >
+        </div>
+      </div>
+    </div>
+    <div *ngIf="activeTab === 'Asie'" class="p-4 rounded-lg bg-gray-50">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Fiche pour la Corée du Sud -->
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white flex-shrink-0">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop" alt="Palais à Séoul, Corée du Sud">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-4 text-gray-800 flex items-center">
+              <span class="fi fi-kr mr-3"></span>Corée du Sud
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Capitale:</span> Séoul
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Coordonnées:</span> 37.56° N, 126.97° E
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Langue:</span> Coréen
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Surface:</span> 100 363 km²
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Devise:</span> Won (KRW)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Aéroport:</span> Incheon (ICN)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Indicatif:</span> +82
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline du voyage -->
+        <div class="flex-1 min-w-[280px]">
+          <h3 class="font-bold text-xl mb-4 text-gray-800">Merveilles de Corée (10 Jours)</h3>
+          <div class="relative border-l-2 border-purple-200 ml-3 pl-6 text-sm">
+            <!-- Jours 1-3 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1590598922695-a58d484c9e7f?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-purple-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 1-3: Séoul</p>
+              <p class="text-gray-600">Palais Gyeongbokgung, shopping à Myeongdong et village de Bukchon.</p>
+            </div>
+            <!-- Jours 4-5 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1590425495221-3f5357795874?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-purple-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 4-5: Busan</p>
+              <p class="text-gray-600">Plage de Haeundae, marché de Jagalchi et village culturel de Gamcheon.</p>
+            </div>
+            <!-- Jours 6-7 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1628745122193-37652852c033?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-purple-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 6-7: Gyeongju</p>
+              <p class="text-gray-600">Exploration de l'ancienne capitale, temple Bulguksa et grotte de Seokguram.</p>
+            </div>
+            <!-- Jours 8-10 -->
+            <div class="cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1582643343988-e65328481f13?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-purple-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 8-10: Retour et Départ</p>
+              <p class="text-gray-600">Retour à Séoul pour les derniers achats et vol de retour.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteneur de l'image -->
+        <div class="flex-1 min-w-[300px] flex items-center justify-center">
+          <img [src]="hoveredImage" 
+               alt="Aperçu du voyage" 
+               class="rounded-lg shadow-lg object-cover w-full h-auto max-h-[400px] transition-opacity duration-300 ease-in-out"
+               [ngClass]="{'opacity-0': isImageFading, 'opacity-100': !isImageFading}"
+          >
+        </div>
+      </div>
+    </div>
+    <div *ngIf="activeTab === 'Europe'" class="p-4 rounded-lg bg-gray-50">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Fiche pour la Belgique -->
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white flex-shrink-0">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1596701062353-765c14d16eb4?q=80&w=1935&auto=format&fit=crop" alt="Canaux de Bruges, Belgique">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-4 text-gray-800 flex items-center">
+              <span class="fi fi-be mr-3"></span>Belgique
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Capitale:</span> Bruxelles
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Coordonnées:</span> 50.85° N, 4.35° E
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Langues:</span> Fr, Nl, De
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Surface:</span> 30 528 km²
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Devise:</span> Euro (EUR)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Aéroport:</span> Bruxelles (BRU)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Indicatif:</span> +32
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline du voyage -->
+        <div class="flex-1 min-w-[280px]">
+          <h3 class="font-bold text-xl mb-4 text-gray-800">Trésors de Belgique (7 Jours)</h3>
+          <div class="relative border-l-2 border-green-200 ml-3 pl-6 text-sm">
+            <!-- Jours 1-2 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1554104132-1537a0341975?q=80&w=1974&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 1-2: Bruxelles</p>
+              <p class="text-gray-600">Exploration de la Grand-Place, Manneken Pis et l'Atomium.</p>
+            </div>
+            <!-- Jours 3-4 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1542359649-31e03cd5d902?q=80&w=1966&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 3-4: Bruges</p>
+              <p class="text-gray-600">Découverte de la "Venise du Nord", ses canaux et son beffroi.</p>
+            </div>
+            <!-- Jour 5 -->
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1620932934204-27134c42f306?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jour 5: Gand</p>
+              <p class="text-gray-600">Visite du Château des Comtes et du centre historique.</p>
+            </div>
+            <!-- Jours 6-7 -->
+            <div class="cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1587985064135-0366536eab42?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 6-7: Anvers & Départ</p>
+              <p class="text-gray-600">Shopping, quartier des diamantaires et vol de retour.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteneur de l'image -->
+        <div class="flex-1 min-w-[300px] flex items-center justify-center">
+          <img [src]="hoveredImage" 
+               alt="Aperçu du voyage" 
+               class="rounded-lg shadow-lg object-cover w-full h-auto max-h-[400px] transition-opacity duration-300 ease-in-out"
+               [ngClass]="{'opacity-0': isImageFading, 'opacity-100': !isImageFading}"
+          >
+        </div>
+      </div>
+    </div>
+    <div *ngIf="activeTab === 'Océanie'" class="p-4 rounded-lg bg-gray-50">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Fiche pour l'Australie -->
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white flex-shrink-0">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=2070&auto=format&fit=crop" alt="Opéra de Sydney, Australie">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-4 text-gray-800 flex items-center">
+              <span class="fi fi-au mr-3"></span>Australie
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Capitale:</span> Canberra
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Coordonnées:</span> 35.28° S, 149.13° E
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Langue:</span> Anglais
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Surface:</span> 7 692 024 km²
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Devise:</span> Dollar (AUD)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Aéroport:</span> Sydney (SYD)
+              </p>
+              <p class="text-gray-700 text-base">
+                <span class="font-semibold w-28 inline-block">Indicatif:</span> +61
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline du voyage -->
+        <div class="flex-1 min-w-[280px]">
+          <h3 class="font-bold text-xl mb-4 text-gray-800">Aventure Australienne (14 Jours)</h3>
+          <div class="relative border-l-2 border-red-200 ml-3 pl-6 text-sm">
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1524293581273-79a027818a26?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-red-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 1-4: Sydney</p>
+              <p class="text-gray-600">Opéra, Harbour Bridge et détente à Bondi Beach.</p>
+            </div>
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1617579192311-4a691c572143?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-red-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 5-7: Cairns & Grande Barrière</p>
+              <p class="text-gray-600">Plongée dans le plus grand récif corallien du monde.</p>
+            </div>
+            <div class="mb-6 cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1596238292824-33b60b433339?q=80&w=2070&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-red-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 8-10: Uluru</p>
+              <p class="text-gray-600">Coucher de soleil sur le monolithe sacré et culture aborigène.</p>
+            </div>
+            <div class="cursor-pointer" (mouseenter)="setHoveredImage('https://images.unsplash.com/photo-1545044846-351ba102b6d5?q=80&w=1974&auto=format&fit=crop')">
+              <div class="absolute w-4 h-4 bg-red-500 rounded-full -left-[9px] border-2 border-white"></div>
+              <p class="font-semibold text-gray-800">Jours 11-14: Melbourne & Départ</p>
+              <p class="text-gray-600">Art de rue, Great Ocean Road et vol de retour.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteneur de l'image -->
+        <div class="flex-1 min-w-[300px] flex items-center justify-center">
+          <img [src]="hoveredImage" 
+               alt="Aperçu du voyage" 
+               class="rounded-lg shadow-lg object-cover w-full h-auto max-h-[400px] transition-opacity duration-300 ease-in-out"
+               [ngClass]="{'opacity-0': isImageFading, 'opacity-100': !isImageFading}"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

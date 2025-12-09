@@ -1,0 +1,57 @@
+<div class="container mx-auto p-8 rounded-lg transition-colors duration-500" [style.backgroundColor]="couleurSelectionnee">
+  <div *ngIf="continentSelectionne; else noContinent">
+    <h1 class="text-4xl font-bold text-white capitalize">Voyages en {{ continentSelectionne }}</h1>
+    <p class="mt-4 text-white capitalize">
+      Découvrez nos offres exclusives pour des voyages inoubliables en {{ continentSelectionne }}.
+    </p>
+
+    <!-- Ici, vous pouvez ajouter du contenu dynamique basé sur le continent -->
+  </div>
+  <ng-template #noContinent>
+    <h1 class="text-4xl font-bold">Où voyager ?</h1>
+    <p class="mt-4">Sélectionnez un continent dans le menu pour découvrir nos destinations.</p>
+  </ng-template>
+</div>
+
+<!-- Onglets des sous-régions (déplacés en dehors du conteneur coloré) -->
+<div *ngIf="subRegions.length > 0" class="container mx-auto mt-8">
+  <div class="flex border-b border-gray-300">
+    <button
+      *ngFor="let region of subRegions"
+      (click)="selectSubRegion(region)"
+      class="py-2 px-4 focus:outline-none"
+      [ngClass]="{'border-b-2 border-orange-500 text-orange-500': selectedSubRegion === region, 'text-gray-500 hover:text-gray-700': selectedSubRegion !== region}"
+    >
+      {{ region.name[currentLang] }}
+    </button>
+  </div>
+  <div *ngIf="selectedSubRegion" class="mt-4 p-4 bg-white rounded-lg shadow">
+    <h2 class="text-2xl font-semibold text-gray-800">{{ selectedSubRegion.name[currentLang] }}</h2>
+
+    <!-- Contenu dynamique basé sur la sous-région sélectionnée -->
+    <div>
+      <p class="mt-2 mb-4 text-gray-700">{{ selectedSubRegion.description[currentLang] }}</p>
+      <div class="overflow-x-auto mt-4">
+        <table class="min-w-full bg-white border border-gray-200">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="py-3 px-4 border-b text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Pays</th>
+              <th class="py-3 px-4 border-b text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Découvrir</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            <tr *ngFor="let country of selectedSubRegion.countries" class="hover:bg-gray-50">
+              <td class="py-3 px-4 border-b">
+                <span class="fi fi-{{ country.flagCode }} mr-3"></span>{{ country.name[currentLang] }}
+              </td>
+              <td class="py-3 px-4 border-b">
+                <a href="#" class="text-orange-600 hover:text-orange-800 hover:underline">Voir les offres</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+</div>

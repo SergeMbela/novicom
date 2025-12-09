@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="navbar.home" datatype="html">
+        <source>Accueil</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="navbar.welcome" datatype="html">
+        <source>Bienvenue</source>
+        <target>Welcome</target>
+      </trans-unit>
+      <trans-unit id="navbar.whereToTravel" datatype="html">
+        <source>Où voyager</source>
+        <target>Where to Travel</target>
+      </trans-unit>
+      <trans-unit id="navbar.mysteryTrip" datatype="html">
+        <source>Voyage Mystère</source>
+        <target>Mystery Trip</target>
+      </trans-unit>
+      <trans-unit id="navbar.tours" datatype="html">
+        <source>Tours</source>
+        <target>Tours</target>
+      </trans-unit>
+      <trans-unit id="navbar.cruises" datatype="html">
+        <source>Croisières</source>
+        <target>Cruises</target>
+      </trans-unit>
+      <trans-unit id="navbar.myAccount" datatype="html">
+        <source>Mon Compte</source>
+        <target>My Account</target>
+      </trans-unit>
+      <trans-unit id="navbar.language" datatype="html">
+        <source>Langue</source>
+        <target>Language</target>
+      </trans-unit>
+      <trans-unit id="navbar.home.mobile" datatype="html">
+        <source>Accueil</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="navbar.welcome.mobile" datatype="html">
+        <source>Bienvenue</source>
+        <target>Welcome</target>
+      </trans-unit>
+      <trans-unit id="navbar.whereToTravel.mobile" datatype="html">
+        <source>Où voyager</source>
+        <target>Where to Travel</target>
+      </trans-unit>
+      <trans-unit id="navbar.mysteryTrip.mobile" datatype="html">
+        <source>Voyage Mystère</source>
+        <target>Mystery Trip</target>
+      </trans-unit>
+      <trans-unit id="navbar.tours.mobile" datatype="html">
+        <source>Tours</source>
+        <target>Tours</target>
+      </trans-unit>
+      <trans-unit id="navbar.cruises.mobile" datatype="html">
+        <source>Croisières</source>
+        <target>Cruises</target>
+      </trans-unit>
+      <trans-unit id="navbar.myAccount.mobile" datatype="html">
+        <source>Mon Compte</source>
+        <target>My Account</target>
+      </trans-unit>
+      <trans-unit id="account.pageTitle" datatype="html">
+        <source>Page de Mon Compte</source>
+        <target>My Account Page</target>
+      </trans-unit>
+      <trans-unit id="account.title" datatype="html">
+        <source>Mon Compte</source>
+        <target>My Account</target>
+      </trans-unit>
+      <trans-unit id="account.welcomeMessage" datatype="html">
+        <source>Bienvenue sur votre page de compte.</source>
+        <target>Welcome to your account page.</target>
+      </trans-unit>
+      <trans-unit id="navbar.welcomeTitle" datatype="html">
+        <source>Bienvenue sur Voyages Novicom</source>
+        <target>Welcome to Novicom Voyages</target>
+      </trans-unit>
+      <trans-unit id="navbar.welcomeSubtitle" datatype="html">
+        <source>Nous sommes ravis de vous accueillir.</source>
+        <target>We are delighted to welcome you.</target>
+      </trans-unit>
+      <trans-unit id="subregion.north_africa.name" datatype="html">
+        <source>Afrique du Nord</source>
+        <target>North Africa</target>
+      </trans-unit>
+      <trans-unit id="subregion.north_africa.description" datatype="html">
+        <source>L&apos;Afrique du Nord est une région où les mélanges de culture, d’histoire et de paysages époustouflants vous transporteront dans un voyage inoubliable.</source>
+        <target>North Africa is a region where mixtures of culture, history and breathtaking landscapes will transport you on an unforgettable journey.</target>
+      </trans-unit>
+      <trans-unit id="country.morocco" datatype="html">
+        <source>Maroc</source>
+        <target>Morocco</target>
+      </trans-unit>
+      <trans-unit id="country.algeria" datatype="html">
+        <source>Algérie</source>
+        <target>Algeria</target>
+      </trans-unit>
+      <trans-unit id="country.tunisia" datatype="html">
+        <source>Tunisie</source>
+        <target>Tunisia</target>
+      </trans-unit>
+      <trans-unit id="country.egypt" datatype="html">
+        <source>Égypte</source>
+        <target>Egypt</target>
+      </trans-unit>
+      <trans-unit id="country.sudan" datatype="html">
+        <source>Soudan</source>
+        <target>Sudan</target>
+      </trans-unit>
+      <trans-unit id="subregion.southern_africa.name" datatype="html">
+        <source>Afrique Australe</source>
+        <target>Southern Africa</target>
+      </trans-unit>
+      <trans-unit id="subregion.southern_africa.description" datatype="html">
+        <source>L&apos;Afrique Australe est une région où se mêlent paysages magnifiques, cultures authentiques et merveilles de l’architecture pour offrir une expérience de voyage inoubliable.</source>
+        <target>Southern Africa is a region where magnificent landscapes, authentic cultures and architectural wonders combine to offer an unforgettable travel experience.</target>
+      </trans-unit>
+      <trans-unit id="country.south_africa" datatype="html">
+        <source>Afrique du Sud</source>
+        <target>South Africa</target>
+      </trans-unit>
+      <trans-unit id="country.namibia" datatype="html">
+        <source>Namibie</source>
+        <target>Namibia</target>
+      </trans-unit>
+      <trans-unit id="country.botswana" datatype="html">
+        <source>Botswana</source>
+        <target>Botswana</target>
+      </trans-unit>
+      <trans-unit id="country.zimbabwe" datatype="html">
+        <source>Zimbabwe</source>
+        <target>Zimbabwe</target>
+      </trans-unit>
+      <trans-unit id="country.zambia" datatype="html">
+        <source>Zambie</source>
+        <target>Zambia</target>
+      </trans-unit>
+      <trans-unit id="subregion.west_africa.name" datatype="html">
+        <source>Afrique de l&apos;Ouest</source>
+        <target>West Africa</target>
+      </trans-unit>
+      <trans-unit id="subregion.west_africa.description" datatype="html">
+        <source>L&apos;Afrique de l&apos;Ouest, berceau de riches empires et de traditions vibrantes, vous invite à un voyage au cœur de la diversité. Des côtes animées aux marchés colorés, en passant par une hospitalité légendaire, découvrez une mosaïque de cultures et de paysages qui ne vous laissera pas indifférent.</source>
+        <target>West Africa, the cradle of rich empires and vibrant traditions, invites you on a journey to the heart of diversity. From lively coasts to colorful markets and legendary hospitality, discover a mosaic of cultures and landscapes that will not leave you indifferent.</target>
+      </trans-unit>
+      <trans-unit id="country.senegal" datatype="html">
+        <source>Sénégal</source>
+        <target>Senegal</target>
+      </trans-unit>
+      <trans-unit id="country.ivory_coast" datatype="html">
+        <source>Côte d&apos;Ivoire</source>
+        <target>Ivory Coast</target>
+      </trans-unit>
+      <trans-unit id="country.ghana" datatype="html">
+        <source>Ghana</source>
+        <target>Ghana</target>
+      </trans-unit>
+      <trans-unit id="country.nigeria" datatype="html">
+        <source>Nigéria</source>
+        <target>Nigeria</target>
+      </trans-unit>
+      <trans-unit id="country.mali" datatype="html">
+        <source>Mali</source>
+        <target>Mali</target>
+      </trans-unit>
+      <trans-unit id="subregion.east_africa.name" datatype="html">
+        <source>Afrique de l&apos;Est</source>
+        <target>East Africa</target>
+      </trans-unit>
+      <trans-unit id="subregion.east_africa.description" datatype="html">
+        <source>L&apos;Afrique de l’Est est une région où se mêlent nature sauvage et paysages époustouflants à une culture riche et une histoire fascinante.</source>
+        <target>East Africa is a region where wild nature and breathtaking landscapes mix with a rich culture and a fascinating history.</target>
+      </trans-unit>
+      <trans-unit id="country.kenya" datatype="html">
+        <source>Kenya</source>
+        <target>Kenya</target>
+      </trans-unit>
+      <trans-unit id="country.tanzania" datatype="html">
+        <source>Tanzanie</source>
+        <target>Tanzania</target>
+      </trans-unit>
+      <trans-unit id="country.uganda" datatype="html">
+        <source>Ouganda</source>
+        <target>Uganda</target>
+      </trans-unit>
+      <trans-unit id="country.rwanda" datatype="html">
+        <source>Rwanda</source>
+        <target>Rwanda</target>
+      </trans-unit>
+      <trans-unit id="country.ethiopia" datatype="html">
+        <source>Éthiopie</source>
+        <target>Ethiopia</target>
+      </trans-unit>
+      <trans-unit id="subregion.central_africa.name" datatype="html">
+        <source>Afrique Centrale</source>
+        <target>Central Africa</target>
+      </trans-unit>
+      <trans-unit id="subregion.central_africa.description" datatype="html">
+        <source>Au cœur du continent, l&apos;Afrique Centrale est une terre de contrastes, abritant d&apos;immenses forêts tropicales, une faune exceptionnelle et des cultures ancestrales. C&apos;est une invitation à l&apos;aventure et à la découverte de trésors naturels encore préservés.</source>
+        <target>In the heart of the continent, Central Africa is a land of contrasts, home to immense tropical forests, exceptional fauna and ancestral cultures. It is an invitation to adventure and to the discovery of still preserved natural treasures.</target>
+      </trans-unit>
+      <trans-unit id="country.cameroon" datatype="html">
+        <source>Cameroun</source>
+        <target>Cameroon</target>
+      </trans-unit>
+      <trans-unit id="country.gabon" datatype="html">
+        <source>Gabon</source>
+        <target>Gabon</target>
+      </trans-unit>
+      <trans-unit id="country.dr_congo" datatype="html">
+        <source>RD Congo</source>
+        <target>DR Congo</target>
+      </trans-unit>
+      <trans-unit id="country.congo" datatype="html">
+        <source>Congo</source>
+        <target>Congo</target>
+      </trans-unit>
+      <trans-unit id="subregion.north_america.name" datatype="html">
+        <source>Amérique du Nord</source>
+        <target>North America</target>
+      </trans-unit>
+      <trans-unit id="subregion.north_america.description" datatype="html">
+        <source>Découvrez l’essence de l’Amérique du Nord, du charme historique du Mexique à la culture cosmopolite de New York en passant par la nature sauvage des parcs nationaux Canadiens.</source>
+        <target>Discover the essence of North America, from the historical charm of Mexico to the cosmopolitan culture of New York and the wilderness of Canadian national parks.</target>
+      </trans-unit>
+      <trans-unit id="country.united_states" datatype="html">
+        <source>États-Unis</source>
+        <target>United States</target>
+      </trans-unit>
+      <trans-unit id="country.canada" datatype="html">
+        <source>Canada</source>
+        <target>Canada</target>
+      </trans-unit>
+      <trans-unit id="country.mexico" datatype="html">
+        <source>Mexique</source>
+        <target>Mexico</target>
+      </trans-unit>
+      <trans-unit id="subregion.south_america.name" datatype="html">
+        <source>Amérique du Sud</source>
+        <target>South America</target>
+      </trans-unit>
+      <trans-unit id="subregion.south_america.description" datatype="html">
+        <source>L&apos;Amérique du Sud vous offre un dépaysement total avec ses cultures vibrantes, ses patrimoines historiques et ses merveilles naturelles. Préparez-vous à vivre des expériences uniques et inoubliables.</source>
+        <target>South America offers you a total change of scenery with its vibrant cultures, historical heritages and natural wonders. Get ready to live unique and unforgettable experiences.</target>
+      </trans-unit>
+      <trans-unit id="country.brazil" datatype="html">
+        <source>Brésil</source>
+        <target>Brazil</target>
+      </trans-unit>
+      <trans-unit id="country.argentina" datatype="html">
+        <source>Argentine</source>
+        <target>Argentina</target>
+      </trans-unit>
+      <trans-unit id="country.peru" datatype="html">
+        <source>Pérou</source>
+        <target>Peru</target>
+      </trans-unit>
+      <trans-unit id="country.colombia" datatype="html">
+        <source>Colombie</source>
+        <target>Colombia</target>
+      </trans-unit>
+      <trans-unit id="country.chile" datatype="html">
+        <source>Chili</source>
+        <target>Chile</target>
+      </trans-unit>
+      <trans-unit id="subregion.central_america.name" datatype="html">
+        <source>Amérique Centrale</source>
+        <target>Central America</target>
+      </trans-unit>
+      <trans-unit id="subregion.central_america.description" datatype="html">
+        <source>Découvrez les merveilles cachées de l’Amérique Centrale, explorez ce joyau rempli de culture riche, de nature préservée et de moments inoubliables.</source>
+        <target>Discover the hidden wonders of Central America, explore this jewel filled with rich culture, preserved nature and unforgettable moments.</target>
+      </trans-unit>
+      <trans-unit id="country.costa_rica" datatype="html">
+        <source>Costa Rica</source>
+        <target>Costa Rica</target>
+      </trans-unit>
+      <trans-unit id="country.panama" datatype="html">
+        <source>Panama</source>
+        <target>Panama</target>
+      </trans-unit>
+      <trans-unit id="country.guatemala" datatype="html">
+        <source>Guatemala</source>
+        <target>Guatemala</target>
+      </trans-unit>
+      <trans-unit id="country.belize" datatype="html">
+        <source>Belize</source>
+        <target>Belize</target>
+      </trans-unit>
+      <trans-unit id="country.nicaragua" datatype="html">
+        <source>Nicaragua</source>
+        <target>Nicaragua</target>
+      </trans-unit>
+      <trans-unit id="subregion.middle_east.name" datatype="html">
+        <source>Moyen-Orient</source>
+        <target>Middle East</target>
+      </trans-unit>
+      <trans-unit id="subregion.middle_east.description" datatype="html">
+        <source>Le Moyen-Orient, carrefour de civilisations anciennes et de modernité audacieuse, offre un voyage fascinant. Des déserts infinis aux villes futuristes, en passant par des sites archéologiques d&apos;une richesse inouïe, découvrez une région de contrastes et d&apos;hospitalité.</source>
+        <target>The Middle East, a crossroads of ancient civilizations and bold modernity, offers a fascinating journey. From endless deserts to futuristic cities, through archaeological sites of incredible richness, discover a region of contrasts and hospitality.</target>
+      </trans-unit>
+      <trans-unit id="country.uae" datatype="html">
+        <source>Émirats arabes unis</source>
+        <target>United Arab Emirates</target>
+      </trans-unit>
+      <trans-unit id="country.jordan" datatype="html">
+        <source>Jordanie</source>
+        <target>Jordan</target>
+      </trans-unit>
+      <trans-unit id="country.oman" datatype="html">
+        <source>Oman</source>
+        <target>Oman</target>
+      </trans-unit>
+      <trans-unit id="country.israel" datatype="html">
+        <source>Israël</source>
+        <target>Israel</target>
+      </trans-unit>
+      <trans-unit id="country.qatar" datatype="html">
+        <source>Qatar</source>
+        <target>Qatar</target>
+      </trans-unit>
+      <trans-unit id="subregion.east_asia.name" datatype="html">
+        <source>Asie de l&apos;Est</source>
+        <target>East Asia</target>
+      </trans-unit>
+      <trans-unit id="subregion.east_asia.description" datatype="html">
+        <source>L&apos;Asie de l&apos;Est est une région de contrastes fascinants, où des traditions millénaires côtoient une modernité fulgurante. Des métropoles dynamiques aux paysages naturels sereins, en passant par une gastronomie mondialement reconnue, cette région offre une expérience de voyage riche et diversifiée.</source>
+        <target>East Asia is a region of fascinating contrasts, where ancient traditions meet dazzling modernity. From dynamic metropolises to serene natural landscapes, and world-renowned gastronomy, this region offers a rich and diverse travel experience.</target>
+      </trans-unit>
+      <trans-unit id="country.china" datatype="html">
+        <source>Chine</source>
+        <target>China</target>
+      </trans-unit>
+      <trans-unit id="country.japan" datatype="html">
+        <source>Japon</source>
+        <target>Japan</target>
+      </trans-unit>
+      <trans-unit id="country.south_korea" datatype="html">
+        <source>Corée du Sud</source>
+        <target>South Korea</target>
+      </trans-unit>
+      <trans-unit id="country.taiwan" datatype="html">
+        <source>Taïwan</source>
+        <target>Taiwan</target>
+      </trans-unit>
+      <trans-unit id="country.mongolia" datatype="html">
+        <source>Mongolie</source>
+        <target>Mongolia</target>
+      </trans-unit>
+      <trans-unit id="subregion.south_asia.name" datatype="html">
+        <source>Asie du Sud</source>
+        <target>South Asia</target>
+      </trans-unit>
+      <trans-unit id="subregion.south_asia.description" datatype="html">
+        <source>L&apos;Asie du Sud est une terre de spiritualité, de couleurs et de contrastes saisissants. Des sommets de l&apos;Himalaya aux plages tropicales, en passant par des villes bouillonnantes et des sites historiques millénaires, cette région promet un voyage intense et profondément marquant.</source>
+        <target>South Asia is a land of spirituality, colors, and striking contrasts. From the peaks of the Himalayas to tropical beaches, through bustling cities and ancient historical sites, this region promises an intense and deeply memorable journey.</target>
+      </trans-unit>
+      <trans-unit id="country.india" datatype="html">
+        <source>Inde</source>
+        <target>India</target>
+      </trans-unit>
+      <trans-unit id="country.nepal" datatype="html">
+        <source>Népal</source>
+        <target>Nepal</target>
+      </trans-unit>
+      <trans-unit id="country.sri_lanka" datatype="html">
+        <source>Sri Lanka</source>
+        <target>Sri Lanka</target>
+      </trans-unit>
+      <trans-unit id="country.pakistan" datatype="html">
+        <source>Pakistan</source>
+        <target>Pakistan</target>
+      </trans-unit>
+      <trans-unit id="country.bhutan" datatype="html">
+        <source>Bhoutan</source>
+        <target>Bhutan</target>
+      </trans-unit>
+      <trans-unit id="subregion.southeast_asia.name" datatype="html">
+        <source>Asie du Sud-Est</source>
+        <target>Southeast Asia</target>
+      </trans-unit>
+      <trans-unit id="subregion.southeast_asia.description" datatype="html">
+        <source>L&apos;Asie du Sud-Est est une mosaïque de cultures, de paysages et de saveurs. Des plages paradisiaques de Thaïlande aux rizières en terrasses du Vietnam, en passant par la jungle luxuriante de Malaisie, chaque destination est une promesse d&apos;aventure et d&apos;émerveillement.</source>
+        <target>Southeast Asia is a mosaic of cultures, landscapes, and flavors. From the paradise beaches of Thailand to the terraced rice fields of Vietnam, through the lush jungle of Malaysia, each destination is a promise of adventure and wonder.</target>
+      </trans-unit>
+      <trans-unit id="country.thailand" datatype="html">
+        <source>Thaïlande</source>
+        <target>Thailand</target>
+      </trans-unit>
+      <trans-unit id="country.vietnam" datatype="html">
+        <source>Vietnam</source>
+        <target>Vietnam</target>
+      </trans-unit>
+      <trans-unit id="country.indonesia" datatype="html">
+        <source>Indonésie</source>
+        <target>Indonesia</target>
+      </trans-unit>
+      <trans-unit id="country.malaysia" datatype="html">
+        <source>Malaisie</source>
+        <target>Malaysia</target>
+      </trans-unit>
+      <trans-unit id="country.singapore" datatype="html">
+        <source>Singapour</source>
+        <target>Singapore</target>
+      </trans-unit>
+      <trans-unit id="subregion.western_europe.name" datatype="html">
+        <source>Europe occidentale</source>
+        <target>Western Europe</target>
+      </trans-unit>
+      <trans-unit id="subregion.western_europe.description" datatype="html">
+        <source>L&apos;Europe occidentale est un concentré d&apos;histoire, d&apos;art et de capitales dynamiques. Des canaux d&apos;Amsterdam aux musées de Paris, en passant par le charme de Londres, chaque ville est une page d&apos;histoire à explorer.</source>
+        <target>Western Europe is a concentrate of history, art and dynamic capitals. From the canals of Amsterdam to the museums of Paris, via the charm of London, each city is a page of history to explore.</target>
+      </trans-unit>
+      <trans-unit id="country.france" datatype="html">
+        <source>France</source>
+        <target>France</target>
+      </trans-unit>
+      <trans-unit id="country.germany" datatype="html">
+        <source>Allemagne</source>
+        <target>Germany</target>
+      </trans-unit>
+      <trans-unit id="country.united_kingdom" datatype="html">
+        <source>Royaume-Uni</source>
+        <target>United Kingdom</target>
+      </trans-unit>
+      <trans-unit id="country.netherlands" datatype="html">
+        <source>Pays-Bas</source>
+        <target>Netherlands</target>
+      </trans-unit>
+      <trans-unit id="country.belgium" datatype="html">
+        <source>Belgique</source>
+        <target>Belgium</target>
+      </trans-unit>
+      <trans-unit id="subregion.eastern_europe.name" datatype="html">
+        <source>Europe de l&apos;Est</source>
+        <target>Eastern Europe</target>
+      </trans-unit>
+      <trans-unit id="subregion.eastern_europe.description" datatype="html">
+        <source>L&apos;Europe de l&apos;Est offre un voyage à travers le temps, avec ses châteaux médiévaux, ses villes impériales et ses traditions préservées. Découvrez des destinations authentiques et pleines de charme, de Prague à Budapest.</source>
+        <target>Eastern Europe offers a journey through time, with its medieval castles, imperial cities and preserved traditions. Discover authentic and charming destinations, from Prague to Budapest.</target>
+      </trans-unit>
+      <trans-unit id="country.poland" datatype="html">
+        <source>Pologne</source>
+        <target>Poland</target>
+      </trans-unit>
+      <trans-unit id="country.czech_republic" datatype="html">
+        <source>République tchèque</source>
+        <target>Czech Republic</target>
+      </trans-unit>
+      <trans-unit id="country.hungary" datatype="html">
+        <source>Hongrie</source>
+        <target>Hungary</target>
+      </trans-unit>
+      <trans-unit id="country.romania" datatype="html">
+        <source>Roumanie</source>
+        <target>Romania</target>
+      </trans-unit>
+      <trans-unit id="country.russia" datatype="html">
+        <source>Russie</source>
+        <target>Russia</target>
+      </trans-unit>
+      <trans-unit id="subregion.northern_europe.name" datatype="html">
+        <source>Europe du Nord</source>
+        <target>Northern Europe</target>
+      </trans-unit>
+      <trans-unit id="subregion.northern_europe.description" datatype="html">
+        <source>L&apos;Europe du Nord est la destination des amoureux de la nature et des grands espaces. Entre les fjords majestueux de Norvège, les aurores boréales et le design scandinave, préparez-vous à un dépaysement total.</source>
+        <target>Northern Europe is the destination for lovers of nature and wide open spaces. Between the majestic fjords of Norway, the northern lights and Scandinavian design, prepare for a total change of scenery.</target>
+      </trans-unit>
+      <trans-unit id="country.sweden" datatype="html">
+        <source>Suède</source>
+        <target>Sweden</target>
+      </trans-unit>
+      <trans-unit id="country.norway" datatype="html">
+        <source>Norvège</source>
+        <target>Norway</target>
+      </trans-unit>
+      <trans-unit id="country.denmark" datatype="html">
+        <source>Danemark</source>
+        <target>Denmark</target>
+      </trans-unit>
+      <trans-unit id="country.finland" datatype="html">
+        <source>Finlande</source>
+        <target>Finland</target>
+      </trans-unit>
+      <trans-unit id="country.iceland" datatype="html">
+        <source>Islande</source>
+        <target>Iceland</target>
+      </trans-unit>
+      <trans-unit id="subregion.southern_europe.name" datatype="html">
+        <source>Europe du Sud</source>
+        <target>Southern Europe</target>
+      </trans-unit>
+      <trans-unit id="subregion.southern_europe.description" datatype="html">
+        <source>L&apos;Europe du Sud est synonyme de soleil, de plages idylliques et de gastronomie savoureuse. De l&apos;Italie à l&apos;Espagne, en passant par la Grèce, profitez d&apos;un art de vivre méditerranéen et de sites antiques exceptionnels.</source>
+        <target>Southern Europe is synonymous with sun, idyllic beaches and tasty gastronomy. From Italy to Spain, via Greece, enjoy a Mediterranean art of living and exceptional ancient sites.</target>
+      </trans-unit>
+      <trans-unit id="country.italy" datatype="html">
+        <source>Italie</source>
+        <target>Italy</target>
+      </trans-unit>
+      <trans-unit id="country.spain" datatype="html">
+        <source>Espagne</source>
+        <target>Spain</target>
+      </trans-unit>
+      <trans-unit id="country.greece" datatype="html">
+        <source>Grèce</source>
+        <target>Greece</target>
+      </trans-unit>
+      <trans-unit id="country.portugal" datatype="html">
+        <source>Portugal</source>
+        <target>Portugal</target>
+      </trans-unit>
+      <trans-unit id="country.croatia" datatype="html">
+        <source>Croatie</source>
+        <target>Croatia</target>
+      </trans-unit>
+      <trans-unit id="subregion.australia.name" datatype="html">
+        <source>Australie</source>
+        <target>Australia</target>
+      </trans-unit>
+      <trans-unit id="subregion.australia.description" datatype="html">
+        <source>L&apos;Australie, continent à part entière, est une terre d&apos;aventure. Explorez le vaste Outback, plongez dans la Grande Barrière de Corail et découvrez une faune unique au monde, des kangourous aux koalas.</source>
+        <target>Australia, a continent in its own right, is a land of adventure. Explore the vast Outback, dive into the Great Barrier Reef and discover a fauna unique in the world, from kangaroos to koalas.</target>
+      </trans-unit>
+      <trans-unit id="country.australia" datatype="html">
+        <source>Australie</source>
+        <target>Australia</target>
+      </trans-unit>
+      <trans-unit id="subregion.melanesia.name" datatype="html">
+        <source>Mélanésie</source>
+        <target>Melanesia</target>
+      </trans-unit>
+      <trans-unit id="subregion.melanesia.description" datatype="html">
+        <source>La Mélanésie est un archipel d&apos;îles volcaniques aux cultures tribales riches et aux fonds marins spectaculaires. Une destination idéale pour la plongée et l&apos;exploration hors des sentiers battus.</source>
+        <target>Melanesia is an archipelago of volcanic islands with rich tribal cultures and spectacular seabeds. An ideal destination for diving and off-the-beaten-path exploration.</target>
+      </trans-unit>
+      <trans-unit id="country.fiji" datatype="html">
+        <source>Fidji</source>
+        <target>Fiji</target>
+      </trans-unit>
+      <trans-unit id="country.papua_new_guinea" datatype="html">
+        <source>Papouasie-Nouvelle-Guinée</source>
+        <target>Papua New Guinea</target>
+      </trans-unit>
+      <trans-unit id="subregion.polynesia.name" datatype="html">
+        <source>Polynésie</source>
+        <target>Polynesia</target>
+      </trans-unit>
+      <trans-unit id="subregion.polynesia.description" datatype="html">
+        <source>La Polynésie évoque des images de paradis terrestre : lagons turquoise, plages de sable blanc et bungalows sur pilotis. Découvrez un rythme de vie paisible et une hospitalité légendaire.</source>
+        <target>Polynesia evokes images of earthly paradise: turquoise lagoons, white sand beaches and overwater bungalows. Discover a peaceful pace of life and legendary hospitality.</target>
+      </trans-unit>
+      <trans-unit id="country.french_polynesia" datatype="html">
+        <source>Polynésie française</source>
+        <target>French Polynesia</target>
+      </trans-unit>
+      <trans-unit id="country.samoa" datatype="html">
+        <source>Samoa</source>
+        <target>Samoa</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
