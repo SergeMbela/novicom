@@ -1,1 +1,4 @@
 /* Styles spécifiques pour la barre de navigation */
+.mobile-menu-button {
+    color: #111827; /* Équivalent de text-gray-900, pour que l'icône soit toujours noire/foncée */
+}

@@ -2,8 +2,7 @@ import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable, Subject, switchMap, of, from } from 'rxjs';
-import { map, catchError, takeUntil, filter } from 'rxjs/operators';
+import { Observable, Subject, switchMap, of, from, map, catchError, takeUntil, filter, tap } from 'rxjs';
 import { loadStripe, Stripe, StripeElements } from '@stripe/stripe-js';
 
 import { environment } from '../../environments/environment';
@@ -82,9 +81,17 @@ async ngOnInit() {
           // Now create the payment intent with the session token
           return this.createPaymentIntent(price, data.session.access_token);
         }), // <--- ADDED COMMA HERE
+        tap(clientSecret => {
+          // Si aucun clientSecret n'est retourné, on désactive le chargement.
+          // Cela se produit si l'utilisateur n'est pas authentifié ou si la création de l'intention de paiement échoue.
+          if (!clientSecret) {
+            this.isPaymentElementLoading = false;
+          }
+        }),
+        filter((clientSecret): clientSecret is string => !!clientSecret),
         takeUntil(this.destroy$)
       ).subscribe(clientSecret => {
-        if (clientSecret && this.stripe && !this.elements) {
+        if (this.stripe && !this.elements) {
           // 2. Initialiser les éléments Stripe avec le clientSecret
           this.elements = this.stripe.elements({ clientSecret, appearance: { theme: 'stripe' } });
 
@@ -92,8 +99,6 @@ async ngOnInit() {
           const paymentElement = this.elements.create('payment');
           paymentElement.mount('#payment-element');
           this.isPaymentElementLoading = false;
-
-          // La soumission du formulaire est gérée par (ngSubmit) dans le template.
         }
       });
     }
