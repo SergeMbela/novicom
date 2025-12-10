@@ -124,10 +124,11 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
-        },
-        "options": {
-          "dir": "dist/novicom/browser/fr"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/novicom/",
+            "dir": "dist/novicom/browser"
+          }
         }
       }
     }
