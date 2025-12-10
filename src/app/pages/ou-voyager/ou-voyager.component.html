@@ -1,22 +1,48 @@
 <!--
+  On intègre directement la navigation des continents ici.
+  - *ngFor="let continent of allContinents" parcourt la liste des continents récupérée dans le composant.
+  - (click)="selectContinent(continent.key)" appelle la méthode pour mettre à jour la sélection.
+  - [class.active] met en surbrillance le bouton du continent actuellement sélectionné.
+-->
+<div class="mb-4 border-b border-gray-200 container mx-auto">
+  <ul class="flex flex-wrap -mb-px text-sm font-medium text-center justify-center" role="tablist">
+    <li *ngFor="let continent of allContinents" class="mr-2" role="presentation">
+      <button (click)="selectContinent(continent.key)"
+              [ngClass]="{
+                'border-blue-600 text-blue-600': (selectedContinentKey$ | async) === continent.key,
+                'border-transparent hover:text-gray-600 hover:border-gray-300': (selectedContinentKey$ | async) !== continent.key
+              }"
+              class="inline-block p-4 border-b-2 rounded-t-lg" type="button" role="tab">
+        {{ continent.name[currentLang] }}
+      </button>
+    </li>
+  </ul>
+</div>
+
+<!--
   On utilise le déclencheur d'animation [@colorChange] qui est lié à `continentSelectionne`.
   L'animation gère elle-même la transition de couleur, y compris pour l'état initial (null).
   On supprime la liaison [style.backgroundColor] qui était en conflit.
 -->
 <ng-container *ngIf="continentData$ | async as continentData">
-  <div class="container mx-auto p-8 rounded-lg" [@colorChange]="continentData?.key">
+  <div class="container mx-auto p-8 rounded-lg bg-cover bg-center" 
+       [@colorChange]="continentData?.key || 'null'"
+       [style.backgroundImage]="continentData ? 'url(' + continentData.imageUrl + ')' : 'none'"
+       style="min-height: 300px; transition: background-image 0.7s ease-in-out;">
 
     <div *ngIf="continentData; else noContinent">
-      <h1 class="text-4xl font-bold text-white">Voyages en {{ continentData.name[currentLang] }}</h1>
-      <p class="mt-4 text-white">
+      <h1 class="text-4xl font-bold text-white" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">Voyages en {{ continentData.name[currentLang] }}</h1>
+      <p class="mt-4 text-white text-lg" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">
         Découvrez nos offres exclusives pour des voyages inoubliables en {{ continentData.name[currentLang] }}.
       </p>
 
       <!-- Ici, vous pouvez ajouter du contenu dynamique basé sur le continent -->
     </div>
     <ng-template #noContinent>
-      <h1 class="text-4xl font-bold">Où voyager ?</h1>
-      <p class="mt-4">Sélectionnez un continent dans le menu pour découvrir nos destinations.</p>
+      <div class="flex flex-col justify-center items-center h-full" style="min-height: 236px;"> <!-- 300px - padding -->
+        <h1 class="text-4xl font-bold text-gray-800">Où voyager ?</h1>
+        <p class="mt-4 text-gray-600 text-lg">Sélectionnez un continent dans le menu pour découvrir nos destinations.</p>
+      </div>
     </ng-template>
   </div>
 </ng-container>

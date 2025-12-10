@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --configuration=fr",
-    "start:fr": "ng serve --configuration=fr",
+    "start": "ng serve", 
+    "start:fr": "ng serve --configuration=fr", 
     "start:en": "ng serve --configuration=en",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:novicom": "node dist/novicom/server/server.mjs"
+    "serve:ssr:novicom": "node dist/novicom/server/server.mjs",
+    "deploy": "ng build --base-href /novicom/ && npx angular-cli-ghpages --dir=dist/novicom/browser"
   },
   "private": true,
   "dependencies": {

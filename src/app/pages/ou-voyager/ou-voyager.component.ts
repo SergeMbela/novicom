@@ -14,13 +14,13 @@ import { ContinentSelectionService, ContinentData } from '../../services/contine
   animations: [
     trigger('colorChange', [
       // State for when no continent is selected
-      state('null', style({ backgroundColor: '#f8f9fa' })), // A light default background
+      state('null', style({ backgroundColor: 'rgba(248, 249, 250, 0.9)' })), // A light default background
       // States for each continent
-      state('afrique',  style({ backgroundColor: '#f1c40f' })),
-      state('amerique', style({ backgroundColor: '#2ecc71' })),
-      state('asie',     style({ backgroundColor: '#e74c3c' })),
-      state('europe',   style({ backgroundColor: '#3498db' })),
-      state('oceanie',  style({ backgroundColor: '#9b59b6' })),
+      state('afrique',  style({ backgroundColor: 'rgba(241, 196, 15, 0.75)' })),
+      state('amerique', style({ backgroundColor: 'rgba(46, 204, 113, 0.75)' })),
+      state('asie',     style({ backgroundColor: 'rgba(231, 76, 60, 0.75)' })),
+      state('europe',   style({ backgroundColor: 'rgba(52, 152, 219, 0.75)' })),
+      state('oceanie',  style({ backgroundColor: 'rgba(155, 89, 182, 0.75)' })),
       // Transition between any two states
       transition('* <=> *', [animate('0.7s ease-in-out')])
     ])
@@ -34,7 +34,10 @@ export class OuVoyagerComponent {
   // Stream of the currently selected sub-region.
   selectedSubRegion$: Observable<SubRegionData | null>;
 
-  currentLang: 'fr' | 'en' = 'fr';
+  // List of all continents to display in the navigation.
+  public allContinents: ContinentData[] = [];
+  // Stream for the key of the selected continent, for styling the active button.
+  public selectedContinentKey$: Observable<string | null>;
 
   // Subject to push user-selected sub-regions into a stream.
   private selectSubRegionAction = new Subject<SubRegionData>();
@@ -43,11 +46,20 @@ export class OuVoyagerComponent {
     @Inject(LOCALE_ID) private localeId: string,
     private continentService: ContinentSelectionService
   ) {
-    this.currentLang = this.localeId.startsWith('en') ? 'en' : 'fr';
+    // Get all continents for the navigation buttons
+    this.allContinents = this.continentService.getContinents();
+
+    // Set Europe as the default selection when the component is initialized.
+    this.continentService.setSelection('europe');
 
     // 1. Base stream of continent data, shared to avoid multiple subscriptions to the source.
     this.continentData$ = this.continentService.selection$.pipe(
       shareReplay(1)
+    );
+
+    // Stream for the key of the selected continent, for styling the active button
+    this.selectedContinentKey$ = this.continentData$.pipe(
+      map(continent => continent?.key ?? null)
     );
 
     // 2. Stream of available sub-regions, derived from the selected continent.
@@ -69,6 +81,11 @@ export class OuVoyagerComponent {
     ).pipe(shareReplay(1));
   }
 
+  // Determines the current language from the locale to display the correct name.
+  public get currentLang(): 'fr' | 'en' {
+    return this.localeId.startsWith('fr') ? 'fr' : 'en';
+  }
+
   private getSubRegionsForContinent(subRegionKeys: string[]): SubRegionData[] {
     if (subRegionKeys.length > 0) {
       // Filter out any keys that might not exist in allSubRegionData to prevent errors.
@@ -80,5 +97,13 @@ export class OuVoyagerComponent {
   // Pushes the user's selection into the action stream.
   selectSubRegion(region: SubRegionData): void {
     this.selectSubRegionAction.next(region);
+  }
+
+  /**
+   * Sets the selected continent in the service when a user clicks a button.
+   * @param key The key of the continent to select.
+   */
+  selectContinent(key: string): void {
+    this.continentService.setSelection(key);
   }
 }

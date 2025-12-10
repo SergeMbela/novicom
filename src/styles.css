@@ -30,8 +30,7 @@ ul {
 }
 
 /* Styling for active tabs as requested */
-/* WARNING: This will make the text invisible due to white text on a white background. */
 .active-tab {
     background-color: white;
-    color: var(--primary-color); /* Example: Use your primary color for active tab text */
+    color: var(--primary-color); /* Black text on white background */
 }

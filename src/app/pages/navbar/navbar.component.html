@@ -15,49 +15,24 @@
         <!-- Menu principal pour les écrans larges -->
         <div class="hidden md:block">
           <ul class="flex items-center space-x-6">
-            <li><a routerLink="/" routerLinkActive="text-blue-600 font-bold" [routerLinkActiveOptions]="{exact: true}" class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300" i18n="@@navbar.home">Accueil</a>
+            <li><a routerLink="/" routerLinkActive="border-black font-bold hover:border-black" [routerLinkActiveOptions]="{exact: true}" class="border-b-2 border-transparent pb-1 hover:text-blue-600 hover:border-yellow-500 transition-colors duration-300" i18n="@@navbar.home">Accueil</a>
             </li>
-            <li><a routerLink="/bienvenue" routerLinkActive="text-blue-600 font-bold" class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300" i18n="@@navbar.welcome">Bienvenue</a>
+            <li><a routerLink="/bienvenue" routerLinkActive="border-black font-bold hover:border-black" class="border-b-2 border-transparent pb-1 hover:text-blue-600 hover:border-yellow-500 transition-colors duration-300" i18n="@@navbar.welcome">Bienvenue</a>
             </li>
             <!-- Menu déroulant "Où voyager" -->
-            <li class="relative">
-              <div class="group">
-                <div
-                  class="relative hover:text-blue-600 flex items-center cursor-pointer after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
-                  i18n="@@navbar.whereToTravel">
-                  <a routerLink="/ou-voyager" 
-                     routerLinkActive="font-bold" 
-                     [routerLinkActiveOptions]="{exact: false}"
-                     [ngClass]="{'text-blue-600': !selectedContinentColor}">
-                    <span [style.color]="selectedContinentColor ? selectedContinentColor : null">{{ selectedContinentDisplay }}</span>
-                  </a>
-                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </div>
-                <div class="absolute left-0 top-full z-10 hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-48" (click)="$event.stopPropagation()">
-                  <ng-container *ngFor="let continent of continents">
-                    <a [routerLink]="['/ou-voyager', continent.key]"
-                      (mouseenter)="onContinentHover(continent, true)"
-                      (mouseleave)="onContinentHover(continent, false)"
-                      [ngClass]="{
-                        'font-bold': selectedContinentKey === continent.key
-                      }"
-                      [style.background-color]="(selectedContinentKey === continent.key || hoveredContinentKey === continent.key) ? continent.color : ''"
-                      [style.color]="(selectedContinentKey === continent.key || hoveredContinentKey === continent.key) ? 'white' : 'rgb(17 24 39)'" 
-                      class="block px-4 py-2 cursor-pointer">
-                      {{ continent.name[currentLangKey] }}
-                    </a>
-                  </ng-container>
-                </div>
-              </div>
+            <li>
+              <a routerLink="/ou-voyager" routerLinkActive="border-black font-bold hover:border-black"
+                class="border-b-2 border-transparent pb-1 hover:text-blue-600 hover:border-yellow-500 transition-colors duration-300"
+                i18n="@@navbar.whereToTravel">Où voyager</a>
             </li>
-            <li><a routerLink="/voyage-mystere" routerLinkActive="text-blue-600 font-bold"
-                class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+            <li><a routerLink="/voyage-mystere" routerLinkActive="border-black font-bold hover:border-black"
+                class="border-b-2 border-transparent pb-1 hover:text-blue-600 hover:border-yellow-500 transition-colors duration-300"
                 i18n="@@navbar.mysteryTrip">Voyage Mystère</a></li>
-            <li><a routerLink="/tours" routerLinkActive="text-blue-600 font-bold"
-                class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+            <li><a routerLink="/tours" routerLinkActive="border-black font-bold hover:border-black"
+                class="border-b-2 border-transparent pb-1 hover:text-blue-600 hover:border-yellow-500 transition-colors duration-300"
                 i18n="@@navbar.tours">Tours</a></li>
-            <li><a routerLink="/croisieres" routerLinkActive="text-blue-600 font-bold"
-                class="relative hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-red-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+            <li><a routerLink="/croisieres" routerLinkActive="border-black font-bold hover:border-black"
+                class="border-b-2 border-transparent pb-1 hover:text-blue-600 hover:border-yellow-500 transition-colors duration-300"
                 i18n="@@navbar.cruises">Croisières</a></li>
             <li>
               <a routerLink="/mon-compte"
@@ -67,22 +42,8 @@
           </ul>
         </div>
 
-        <!-- Language Selector (Desktop) -->
-        <div class="relative group hidden md:block">
-          <button class="flex items-center hover:text-blue-600 focus:outline-none" i18n="@@navbar.language">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5.61l-1.4 4H4l-1.4-4H1V7h3.21L5 4h2l-1.21 3H7v2zm6.79-2H15V9h-3.21L12 12h2l-1.4 4H12l-1.4-4H9V7h3.21z" clip-rule="evenodd" />
-            </svg>
-            <span>{{ currentLang === 'en' ? 'English' : 'Français' }}</span>
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </button>
-          <div class="absolute right-0 top-full z-10 hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-28">
-            <a (click)="changeLanguage('en')"
-              class="block px-4 py-2 text-gray-900 hover:bg-gray-100 cursor-pointer">English</a>
-            <a (click)="changeLanguage('fr')"
-              class="block px-4 py-2 text-gray-900 hover:bg-gray-100 cursor-pointer">Français</a>
-          </div>
-        </div>
+        <!-- Sélecteur de langue -->
+        <app-language-switcher></app-language-switcher>
 
         <!-- Icône du panier avec badge (toutes tailles) -->
         <div class="relative">
@@ -126,26 +87,9 @@
             class="block py-2 px-4 text-sm hover:bg-gray-100 rounded" i18n="@@navbar.home.mobile">Accueil</a></li>
         <li><a routerLink="/bienvenue" (click)="toggleMobileMenu()" routerLinkActive="text-blue-600 font-bold"
             class="block py-2 px-4 text-sm hover:bg-gray-100 rounded" i18n="@@navbar.welcome.mobile">Bienvenue</a></li>
-        <li><a routerLink="/ou-voyager" (click)="toggleMobileMenu()" routerLinkActive="text-blue-600 font-bold"
-            class="block py-2 px-4 text-sm font-semibold" [routerLinkActiveOptions]="{exact: false}"
-            i18n="@@navbar.whereToTravel.mobile">{{ selectedContinentDisplay }}</a></li>
-        <!-- Sous-menu mobile -->
-        <li class="pl-8">
-          <ul class="flex flex-col space-y-1">
-            <li *ngFor="let continent of continents">
-              <a [routerLink]="['/ou-voyager', continent.key]" (click)="toggleMobileMenu()"
-                (mouseenter)="onContinentHover(continent, true)"
-                (mouseleave)="onContinentHover(continent, false)"
-                [ngClass]="{
-                  'font-bold': selectedContinentKey === continent.key
-                }"
-                [style.backgroundColor]="(selectedContinentKey === continent.key || hoveredContinentKey === continent.key) ? continent.color : ''"
-                [style.color]="(selectedContinentKey === continent.key || hoveredContinentKey === continent.key) ? 'white' : 'inherit'" 
-                class="block py-1 text-sm rounded cursor-pointer">
-                {{ continent.name[currentLangKey] }}
-              </a>
-            </li>
-          </ul>
+        <li>
+          <a routerLink="/ou-voyager" (click)="toggleMobileMenu()" routerLinkActive="text-blue-600 font-bold"
+            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded" i18n="@@navbar.whereToTravel.mobile">Où voyager</a>
         </li>
         <li><a routerLink="/voyage-mystere" (click)="toggleMobileMenu()" routerLinkActive="text-blue-600 font-bold"
             class="block py-2 px-4 text-sm hover:bg-gray-100 rounded" i18n="@@navbar.mysteryTrip.mobile">Voyage
@@ -157,15 +101,6 @@
           <a routerLink="/mon-compte" (click)="toggleMobileMenu()"
             class="block w-full text-left bg-[oklch(29.3%_0.066_243.157)] hover:bg-[oklch(26%_0.066_243.157)] text-white font-bold py-2 px-4 rounded"
             i18n="@@navbar.myAccount.mobile">Mon Compte</a>
-        </li>
-        <!-- Mobile Language Selector -->
-        <li>
-          <a (click)="changeLanguage('en'); toggleMobileMenu()"
-            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded cursor-pointer">English</a>
-        </li>
-        <li>
-          <a (click)="changeLanguage('fr'); toggleMobileMenu()"
-            class="block py-2 px-4 text-sm hover:bg-gray-100 rounded cursor-pointer">Français</a>
         </li>
       </ul>
     </div>
