@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { CartComponent } from './pages/cart/cart.component';
 import { BienvenueComponent } from './pages/bienvenue/bienvenue.component';
 import { OuVoyagerComponent } from './pages/ou-voyager/ou-voyager.component';
 import { VoyageMystereComponent } from './pages/voyage-mystere/voyage-mystere.component';
@@ -16,15 +17,12 @@ export const routes: Routes = [
   { path: 'tours', component: ToursComponent },
   { path: 'croisieres', component: CroisieresComponent },
   { path: 'mon-compte', component: MonCompteComponent },
+  { path: 'cart', component: CartComponent },
 
   // Routes for the 'en' locale (prefixed)
   // Angular i18n routing automatically handles this prefixing during build/serve
-  // So, we don't need to explicitly define '/en/home', '/en/bienvenue', etc. here.
+  // so we don't need to explicitly define '/en/home', etc. here.
   // The `localize` option in angular.json handles the URL prefixing.
-  // However, if we want to manually handle it for some reason, we could.
-  // But the standard Angular i18n setup means the routes array remains the same.
-  // The `changeLanguage` function will simply redirect to the correct base URL.
-
 
   // Redirection vers l'accueil si la route n'existe pas
   { path: '**', redirectTo: '', pathMatch: 'full' },

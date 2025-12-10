@@ -1,0 +1,28 @@
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+    <!-- Logo ou nom du site -->
+    <a href="#" class="text-2xl font-bold text-primary-color">NoviCom</a>
+
+    <!-- Liens de navigation -->
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="#" class="text-gray-600 hover:text-primary-color" i18n="@@nav.home">Accueil</a>
+      <a href="#" class="text-gray-600 hover:text-primary-color" i18n="@@nav.destinations">Destinations</a>
+      <a href="#" class="text-gray-600 hover:text-primary-color" i18n="@@nav.contact">Contact</a>
+    </div>
+
+    <!-- Icône du panier avec badge -->
+    <div class="relative">
+      <a href="#" class="text-gray-600 hover:text-primary-color">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
+          <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.744-.648l3-9a.75.75 0 00-.744-.852H5.25l-.308-1.159A.75.75 0 004.2 2.25H2.25zM16.5 18.75a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.75 18.75a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+        </svg>
+      </a>
+      <!-- Badge pour le nombre d'articles -->
+      <ng-container *ngIf="cartItemCount$ | async as count">
+        <span *ngIf="count > 0" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+          {{ count }}
+        </span>
+      </ng-container>
+    </div>
+  </div>
+</nav>

@@ -34,6 +34,10 @@
         <source>Langue</source>
         <target>Language</target>
       </trans-unit>
+      <trans-unit id="navbar.toggleMobileMenu.label" datatype="html">
+        <source>Ouvrir le menu de navigation</source>
+        <target>Open navigation menu</target>
+      </trans-unit>
       <trans-unit id="navbar.home.mobile" datatype="html">
         <source>Accueil</source>
         <target>Home</target>
@@ -561,6 +565,138 @@
       <trans-unit id="country.samoa" datatype="html">
         <source>Samoa</source>
         <target>Samoa</target>
+      </trans-unit>
+      <trans-unit id="home.popularDestinations" datatype="html">
+        <source>Nos destinations populaires</source>
+        <target>Our Popular Destinations</target>
+      </trans-unit>
+      <trans-unit id="home.searchPlaceholder" datatype="html">
+        <source>Rechercher une destination (ex: Rome, Japon...)</source>
+        <target>Search for a destination (e.g., Rome, Japan...)</target>
+      </trans-unit>
+      <trans-unit id="home.imageAlt" datatype="html">
+        <source>Image de <x id="INTERPOLATION" equiv-text="{{dest.location}}"/></source>
+        <target>Image of <x id="INTERPOLATION" equiv-text="{{dest.location}}"/></target>
+      </trans-unit>
+      <trans-unit id="home.daysCount" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ dest.days }}"/> jours</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ dest.days }}"/> days</target>
+      </trans-unit>
+      <trans-unit id="home.orderButton" datatype="html">
+        <source> Commander </source>
+        <target> Order </target>
+      </trans-unit>
+      <trans-unit id="home.addToCartButton" datatype="html">
+        <source>Ajouter au panier</source>
+        <target>Add to Cart</target>
+      </trans-unit>
+      <trans-unit id="navbar.language.mobile" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{ currentLang === &apos;en&apos; ? &apos;English&apos; : &apos;Français&apos; }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG__SVG_SVG" ctype="x-svg" equiv-text="&lt;svg&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-path" equiv-text="&lt;path/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-path" equiv-text="&lt;/path&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-svg" equiv-text="&lt;/svg&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{ currentLang === &apos;en&apos; ? &apos;English&apos; : &apos;Français&apos; }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG__SVG_SVG" ctype="x-svg" equiv-text="&lt;svg&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-path" equiv-text="&lt;path/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-path" equiv-text="&lt;/path&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-svg" equiv-text="&lt;/svg&gt;"/></target>
+      </trans-unit>
+      <trans-unit id="account.createTab" datatype="html">
+        <source>Créer un compte</source>
+        <target>Create Account</target>
+      </trans-unit>
+      <trans-unit id="account.loginTab" datatype="html">
+        <source>Identifiez-vous</source>
+        <target>Log In</target>
+      </trans-unit>
+      <trans-unit id="account.createTitle" datatype="html">
+        <source>Créer un compte</source>
+        <target>Create an Account</target>
+      </trans-unit>
+      <trans-unit id="account.genderLabel" datatype="html">
+        <source>Genre</source>
+        <target>Gender</target>
+      </trans-unit>
+      <trans-unit id="account.genderSelectPlaceholder" datatype="html">
+        <source>Sélectionnez...</source>
+        <target>Select...</target>
+      </trans-unit>
+      <trans-unit id="account.genderMale" datatype="html">
+        <source>Homme</source>
+        <target>Male</target>
+      </trans-unit>
+      <trans-unit id="account.genderFemale" datatype="html">
+        <source>Femme</source>
+        <target>Female</target>
+      </trans-unit>
+      <trans-unit id="account.genderOther" datatype="html">
+        <source>Autre</source>
+        <target>Other</target>
+      </trans-unit>
+      <trans-unit id="account.firstNameLabel" datatype="html">
+        <source>Prénom</source>
+        <target>First Name</target>
+      </trans-unit>
+      <trans-unit id="account.firstNamePlaceholder" datatype="html">
+        <source>Jean</source>
+        <target>John</target>
+      </trans-unit>
+      <trans-unit id="account.lastNameLabel" datatype="html">
+        <source>Nom</source>
+        <target>Last Name</target>
+      </trans-unit>
+      <trans-unit id="account.lastNamePlaceholder" datatype="html">
+        <source>Dupont</source>
+        <target>Doe</target>
+      </trans-unit>
+      <trans-unit id="account.emailLabel" datatype="html">
+        <source>Adresse e-mail</source>
+        <target>Email address</target>
+      </trans-unit>
+      <trans-unit id="account.emailPlaceholder" datatype="html">
+        <source>email@example.com</source>
+        <target>email@example.com</target>
+      </trans-unit>
+      <trans-unit id="account.emailConfirmLabel" datatype="html">
+        <source>Confirmer l&apos;adresse e-mail</source>
+        <target>Confirm email address</target>
+      </trans-unit>
+      <trans-unit id="account.emailConfirmPlaceholder" datatype="html">
+        <source>email@example.com</source>
+        <target>email@example.com</target>
+      </trans-unit>
+      <trans-unit id="account.passwordLabel" datatype="html">
+        <source>Mot de passe</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="account.passwordPlaceholder" datatype="html">
+        <source>******************</source>
+        <target>******************</target>
+      </trans-unit>
+      <trans-unit id="account.passwordConfirmLabel" datatype="html">
+        <source>Confirmer le mot de passe</source>
+        <target>Confirm password</target>
+      </trans-unit>
+      <trans-unit id="account.passwordConfirmPlaceholder" datatype="html">
+        <source>******************</source>
+        <target>******************</target>
+      </trans-unit>
+      <trans-unit id="account.phoneLabel" datatype="html">
+        <source>Numéro de téléphone</source>
+        <target>Phone number</target>
+      </trans-unit>
+      <trans-unit id="account.phonePlaceholder" datatype="html">
+        <source>6 12 34 56 78</source>
+        <target>6 12 34 56 78</target>
+      </trans-unit>
+      <trans-unit id="account.newsletterLabel" datatype="html">
+        <source>Je souhaite recevoir les nouvelles de Novicom.</source>
+        <target>I want to receive news from Novicom.</target>
+      </trans-unit>
+      <trans-unit id="account.createButton" datatype="html">
+        <source> Créer mon compte </source>
+        <target> Create my account </target>
+      </trans-unit>
+      <trans-unit id="account.loginTitle" datatype="html">
+        <source>S&apos;authentifier</source>
+        <target>Authenticate</target>
+      </trans-unit>
+      <trans-unit id="account.loginButton" datatype="html">
+        <source> Se connecter </source>
+        <target> Log in </target>
       </trans-unit>
     </body>
   </file>

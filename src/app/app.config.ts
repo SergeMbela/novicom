@@ -1,17 +1,17 @@
-// Example for src/app/app.config.ts
-
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    // Fournit les routes à l'application
     provideRouter(routes),
-    provideClientHydration(withEventReplay()),
-    provideHttpClient()
+    // Active le support des animations dans l'application
+    provideAnimations(),
+    // Fournit le client HTTP pour les appels API, avec le support de fetch
+    provideHttpClient(withFetch())
   ]
 };

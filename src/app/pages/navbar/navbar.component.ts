@@ -1,15 +1,11 @@
-import { Component, OnInit, OnDestroy, Inject, LOCALE_ID } from '@angular/core';
-import { Router, ActivatedRoute, RouterModule } from '@angular/router';
-import { Subscription, first } from 'rxjs';
-import { CommonModule, DOCUMENT } from '@angular/common';
-import { ContinentSelectionService } from '../../services/continent-selection.service';
-
-interface Continent {
-  key: string;
-  nameFr: string;
-  nameEn: string;
-  color: string;
-}
+import { Component, HostListener, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router, RouterModule, NavigationEnd } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { Observable } from 'rxjs';
+import { map, filter, startWith, tap } from 'rxjs/operators';
+import { CartService } from '../../cart.service';
+import { ContinentSelectionService, ContinentData } from '../../services/continent-selection.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,108 +13,92 @@ interface Continent {
   imports: [CommonModule, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
+  animations: [
+    trigger('badgeAnimation', [
+      // Cette transition se déclenche à chaque fois que la valeur du trigger change
+      transition('* => *', [
+        style({ transform: 'scale(1.5)' }), // Agrandit le badge
+        animate('300ms ease-out', style({ transform: 'scale(1)' })) // Le ramène à sa taille normale
+      ])
+    ])
+  ]
 })
-export class NavbarComponent implements OnInit, OnDestroy {
+export class NavbarComponent implements OnInit {
   isMobileMenuOpen = false;
-  
-  // Default to French, but this will be overridden in constructor
-  selectedContinentDisplay: string = 'Où voyager'; 
-  selectedContinentKey: string | null = null;
+  isScrolled = false; // Pour suivre l'état du défilement
+
+  continents: ContinentData[] = [];
+  selectedContinentKey: string = 'ou-voyager';
+  selectedContinentDisplay: string = 'Où voyager';
+  selectedContinentColor: string | null = null;
   hoveredContinentKey: string | null = null;
-  
-  // Determine if we are in English mode based on the build locale
-  currentLang: 'fr' | 'en' = 'fr'; 
-
-  private continentSelectionSubscription: Subscription | undefined;
-  private urlSubscription: Subscription | undefined;
-
-  continents: Continent[] = [
-    { key: 'amerique', nameFr: 'Amérique', nameEn: 'America', color: 'oklch(45% 0.085 224.283)' },
-    { key: 'afrique', nameFr: 'Afrique', nameEn: 'Africa', color: 'oklch(41.4% 0.112 45.904)' },
-    { key: 'asie', nameFr: 'Asie', nameEn: 'Asia', color: 'oklch(80.8% 0.114 19.571)' },
-    { key: 'europe', nameFr: 'Europe', nameEn: 'Europe', color: 'oklch(50% 0.134 242.749)' },
-    { key: 'oceanie', nameFr: 'Océanie', nameEn: 'Oceania', color: 'oklch(60.6% 0.25 292.717)' },
-  ];
+  currentLang: string; // 'fr' or 'en'
+  currentLangKey: 'fr' | 'en';
+  cartItemCount$: Observable<number>;
 
   constructor(
     private router: Router,
-    private continentSelectionService: ContinentSelectionService,
-    private activatedRoute: ActivatedRoute,
-    @Inject(LOCALE_ID) private localeId: string, // Inject the Angular Locale ID
-    @Inject(DOCUMENT) private document: Document // Inject the document object
+    @Inject(LOCALE_ID) public localeId: string,
+    private cartService: CartService,
+    private continentService: ContinentSelectionService
   ) {
-    // Set initial language based on the Angular build locale.
-    // This is a good fallback, but we'll rely on the URL for dynamic updates.
-    this.currentLang = this.localeId.startsWith('en') ? 'en' : 'fr'; 
+    this.continents = this.continentService.getContinents();
+    this.currentLang = this.localeId.split('-')[0];
+    this.currentLangKey = this.currentLang as 'fr' | 'en';
+    this.cartItemCount$ = this.cartService.items$.pipe(
+      map(items => items.reduce((acc, item) => acc + item.quantity, 0))
+    );
   }
 
   ngOnInit(): void {
-    // Subscribe to URL changes to keep the current language updated.
-    this.urlSubscription = this.activatedRoute.url.subscribe(urlSegments => {
-      // The language is determined by the first segment of the URL (e.g., /en/home)
-      this.currentLang = urlSegments[0]?.path === 'en' ? 'en' : 'fr';
-      this.updateSelectedContinentDisplay(); // Update menu text when language changes
-    });
-
-    // Subscribe to continent selection changes from the service
-    this.continentSelectionSubscription = this.continentSelectionService.currentSelection$.subscribe(selection => {
-      this.selectedContinentKey = selection?.key || null;
-      this.updateSelectedContinentDisplay();
-    });
-  }
-
-  updateSelectedContinentDisplay(): void {
-    const defaultText = this.currentLang === 'en' ? 'Where to travel' : 'Où voyager';
-
-    if (this.selectedContinentKey) {
-      const selected = this.continents.find(c => c.key === this.selectedContinentKey);
-      if (selected) {
-        this.selectedContinentDisplay = this.currentLang === 'en' ? selected.nameEn : selected.nameFr;
-      } else {
-        this.selectedContinentDisplay = defaultText;
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      startWith(this.router.url), // Émet immédiatement l'URL actuelle
+      map(() => this.router.url)
+    ).subscribe(url => {
+      const urlSegments = url.split('/');
+      let continentKey: string | null = null;
+      
+      // Recherche l'index du segment 'ou-voyager' pour gérer les URLs avec ou sans préfixe de langue (ex: /fr/ou-voyager)
+      const ouVoyagerIndex = urlSegments.indexOf('ou-voyager');
+      if (ouVoyagerIndex > -1 && urlSegments.length > ouVoyagerIndex + 1 && urlSegments[ouVoyagerIndex + 1]) {
+        continentKey = urlSegments[ouVoyagerIndex + 1];
       }
-    } else {
-      this.selectedContinentDisplay = defaultText;
-    }
+
+      if (continentKey) {
+        const continent = this.continents.find(c => c.key === continentKey);
+        if (continent) {
+          this.selectedContinentKey = continent.key;
+          this.selectedContinentDisplay = continent.name[this.currentLangKey];
+          this.selectedContinentColor = continent.color;
+          this.continentService.setSelection(continent.key); // Notifier le service du changement
+        }
+      } else {
+        this.selectedContinentKey = 'ou-voyager';
+        this.selectedContinentDisplay = this.currentLang === 'en' ? 'Where to travel' : 'Où voyager';
+        this.selectedContinentColor = null;
+        this.continentService.setSelection(null); // Notifier qu'aucun continent n'est sélectionné
+      }
+    });
   }
 
-  ngOnDestroy(): void {
-    this.continentSelectionSubscription?.unsubscribe();
-    this.urlSubscription?.unsubscribe();
+  // Écoute l'événement de défilement sur la fenêtre
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    // Si le défilement vertical est supérieur à 10px, on passe isScrolled à true
+    this.isScrolled = window.scrollY > 10;
   }
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  onContinentSelected(key: string, color: string): void {
-    const continent = this.continents.find(c => c.key === key);
-    if (continent) {
-      // The service expects a 'name' property, so we provide the correct one based on the current language.
-      const name = this.currentLang === 'en' ? continent.nameEn : continent.nameFr;
-      this.continentSelectionService.changeSelection({ key, color, name });
-      this.router.navigate(['/ou-voyager']);
-      this.isMobileMenuOpen = false; // Close menu on selection
-    }
-  }
-
-  onContinentHover(continent: Continent, isHovering: boolean): void {
+  onContinentHover(continent: any, isHovering: boolean): void {
     this.hoveredContinentKey = isHovering ? continent.key : null;
   }
 
-  changeLanguage(targetLang: string): void {
-    if (this.currentLang === targetLang) return; // Prevent unnecessary reload
-
-    const currentPath = this.document.location.pathname;
-    const currentSearch = this.document.location.search;
-
-    // Reconstruct the path by removing the old locale prefix and adding the new one.
-    // This is more robust than a simple string replacement.
-    const pathWithoutLocale = currentPath.startsWith(`/${this.currentLang}`)
-      ? currentPath.substring(this.currentLang.length + 1)
-      : currentPath;
-
-    // Force a full page reload to the new URL to load the correct language bundle.
-    this.document.location.href = `/${targetLang}${pathWithoutLocale}${currentSearch}`;
+  changeLanguage(lang: string): void {
+    // Redirige vers la version linguistique correspondante du site
+    window.location.href = `/${lang}`;
   }
 }

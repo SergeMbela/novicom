@@ -2,51 +2,48 @@
   <app-navbar></app-navbar>
 
   <main class="flex-grow">
-    <div class="bg-gray-100">
-      <div class="container mx-auto p-8">
-        <!-- Le contenu des pages s'affichera ici -->
-        <router-outlet></router-outlet>
-      </div>
+    <div class="bg-gray-100 h-full">
+      <!-- Le contenu des pages s'affichera ici -->
+      <router-outlet></router-outlet>
     </div>
   </main>
+    <!-- Pied de page -->
+    <footer class="bg-gray-800 text-white p-6">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+          <!-- Section Service Client -->
+          <div>
+            <h3 class="font-bold text-lg mb-2 text-white">Service Client</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a routerLink="/contact" class="text-gray-400 hover:text-white">Nous contacter</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Passagers en situation de handicap</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Modes de paiement</a></li>
+            </ul>
+          </div>
 
-  <!-- Pied de page -->
-  <footer class="bg-gray-800 text-white p-6">
-    <div class="container mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-        <!-- Section Service Client -->
-        <div>
-          <h3 class="font-bold text-lg mb-2 text-white">Service Client</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a routerLink="/contact" class="text-gray-400 hover:text-white">Nous contacter</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Passagers en situation de handicap</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Modes de paiement</a></li>
-          </ul>
-        </div>
+          <!-- Section Navigation -->
+          <div>
+            <h3 class="font-bold text-lg mb-2 text-white">Navigation</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a routerLink="/" class="text-gray-400 hover:text-white">Accueil</a></li>
+              <li><a routerLink="/ou-voyager" class="text-gray-400 hover:text-white">Où voyager</a></li>
+            </ul>
+          </div>
 
-        <!-- Section Navigation -->
-        <div>
-          <h3 class="font-bold text-lg mb-2 text-white">Navigation</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a routerLink="/" class="text-gray-400 hover:text-white">Accueil</a></li>
-            <li><a routerLink="/destinations" class="text-gray-400 hover:text-white">Destinations</a></li>
-          </ul>
-        </div>
-
-        <!-- Section Suivez-nous -->
-        <div>
-          <h3 class="font-bold text-lg mb-2 text-white">Suivez-nous</h3>
-          <div class="flex justify-center md:justify-start space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clip-rule="evenodd" /></svg></a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" /></svg></a>
+          <!-- Section Suivez-nous -->
+          <div>
+            <h3 class="font-bold text-lg mb-2 text-white">Suivez-nous</h3>
+            <div class="flex justify-center md:justify-start space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clip-rule="evenodd" /></svg></a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" /></svg></a>
+            </div>
           </div>
         </div>
+        <!-- Copyright -->
+        <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+          <p>&copy; 2024 Novicom. Tous droits réservés.</p>
+        </div>
       </div>
-      <!-- Copyright -->
-      <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
-        <p>&copy; 2024 Novicom. Tous droits réservés.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 </div>

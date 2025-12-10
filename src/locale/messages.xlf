@@ -2,14 +2,47 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="fr" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="navbar.home" datatype="html">
+        <source>Accueil</source>
+      </trans-unit>
+      <trans-unit id="navbar.welcome" datatype="html">
+        <source>Bienvenue</source>
+      </trans-unit>
+      <trans-unit id="navbar.whereToTravel" datatype="html">
+        <source>Où voyager</source>
+      </trans-unit>
+      <trans-unit id="navbar.mysteryTrip" datatype="html">
+        <source>Voyage Mystère</source>
+      </trans-unit>
+      <trans-unit id="navbar.tours" datatype="html">
+        <source>Tours</source>
+      </trans-unit>
+      <trans-unit id="navbar.cruises" datatype="html">
+        <source>Croisières</source>
+      </trans-unit>
       <trans-unit id="navbar.welcomeTitle" datatype="html">
         <source>Bienvenue sur Voyages Novicom</source>
       </trans-unit>
       <trans-unit id="navbar.welcomeSubtitle" datatype="html">
         <source>Nous sommes ravis de vous accueillir.</source>
       </trans-unit>
+      <trans-unit id="navbar.language" datatype="html">
+        <source>Langue</source>
+      </trans-unit>
+      <trans-unit id="navbar.toggleMobileMenu.label" datatype="html">
+        <source>Ouvrir le menu de navigation</source>
+      </trans-unit>
       <trans-unit id="navbar.myAccount" datatype="html">
-        <source>Mon compte</source>
+        <source>Mon Compte</source>
+      </trans-unit>
+      <trans-unit id="account.pageTitle" datatype="html">
+        <source>Page de Mon Compte</source>
+      </trans-unit>
+      <trans-unit id="account.title" datatype="html">
+        <source>Mon Compte</source>
+      </trans-unit>
+      <trans-unit id="account.welcomeMessage" datatype="html">
+        <source>Bienvenue sur votre page de compte.</source>
       </trans-unit>
       <trans-unit id="subregion.north_africa.name" datatype="html">
         <source>Afrique du Nord</source>
@@ -370,6 +403,114 @@
       </trans-unit>
       <trans-unit id="country.samoa" datatype="html">
         <source>Samoa</source>
+      </trans-unit>
+      <trans-unit id="home.popularDestinations" datatype="html">
+        <source>Nos destinations populaires</source>
+      </trans-unit>
+      <trans-unit id="home.searchPlaceholder" datatype="html">
+        <source>Rechercher une destination (ex: Rome, Japon...)</source>
+      </trans-unit>
+      <trans-unit id="home.imageAlt" datatype="html">
+        <source>Image de <x id="INTERPOLATION" equiv-text="{{dest.location}}"/></source>
+      </trans-unit>
+      <trans-unit id="home.daysCount" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ dest.days }}"/> jours</source>
+      </trans-unit>
+      <trans-unit id="home.orderButton" datatype="html">
+        <source> Commander </source>
+      </trans-unit>
+      <trans-unit id="home.addToCartButton" datatype="html">
+        <source>Ajouter au panier</source>
+      </trans-unit>
+      <trans-unit id="navbar.language.mobile" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{ currentLang === &apos;en&apos; ? &apos;English&apos; : &apos;Français&apos; }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG__SVG_SVG" ctype="x-svg" equiv-text="&lt;svg&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-path" equiv-text="&lt;path/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-path" equiv-text="&lt;/path&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-svg" equiv-text="&lt;/svg&gt;"/></source>
+      </trans-unit>
+      <trans-unit id="navbar.home.mobile" datatype="html">
+        <source>Accueil</source>
+      </trans-unit>
+      <trans-unit id="navbar.welcome.mobile" datatype="html">
+        <source>Bienvenue</source>
+      </trans-unit>
+      <trans-unit id="navbar.whereToTravel.mobile" datatype="html">
+        <source>Où voyager</source>
+      </trans-unit>
+      <trans-unit id="account.createTab" datatype="html">
+        <source>Créer un compte</source>
+      </trans-unit>
+      <trans-unit id="account.loginTab" datatype="html">
+        <source>Identifiez-vous</source>
+      </trans-unit>
+      <trans-unit id="account.createTitle" datatype="html">
+        <source>Créer un compte</source>
+      </trans-unit>
+      <trans-unit id="account.genderLabel" datatype="html">
+        <source>Genre</source>
+      </trans-unit>
+      <trans-unit id="account.genderSelectPlaceholder" datatype="html">
+        <source>Sélectionnez...</source>
+      </trans-unit>
+      <trans-unit id="account.genderMale" datatype="html">
+        <source>Homme</source>
+      </trans-unit>
+      <trans-unit id="account.genderFemale" datatype="html">
+        <source>Femme</source>
+      </trans-unit>
+      <trans-unit id="account.genderOther" datatype="html">
+        <source>Autre</source>
+      </trans-unit>
+      <trans-unit id="account.firstNameLabel" datatype="html">
+        <source>Prénom</source>
+      </trans-unit>
+      <trans-unit id="account.firstNamePlaceholder" datatype="html">
+        <source>Jean</source>
+      </trans-unit>
+      <trans-unit id="account.lastNameLabel" datatype="html">
+        <source>Nom</source>
+      </trans-unit>
+      <trans-unit id="account.lastNamePlaceholder" datatype="html">
+        <source>Dupont</source>
+      </trans-unit>
+      <trans-unit id="account.emailLabel" datatype="html">
+        <source>Adresse e-mail</source>
+      </trans-unit>
+      <trans-unit id="account.emailPlaceholder" datatype="html">
+        <source>email@example.com</source>
+      </trans-unit>
+      <trans-unit id="account.emailConfirmLabel" datatype="html">
+        <source>Confirmer l&apos;adresse e-mail</source>
+      </trans-unit>
+      <trans-unit id="account.emailConfirmPlaceholder" datatype="html">
+        <source>email@example.com</source>
+      </trans-unit>
+      <trans-unit id="account.passwordLabel" datatype="html">
+        <source>Mot de passe</source>
+      </trans-unit>
+      <trans-unit id="account.passwordPlaceholder" datatype="html">
+        <source>******************</source>
+      </trans-unit>
+      <trans-unit id="account.passwordConfirmLabel" datatype="html">
+        <source>Confirmer le mot de passe</source>
+      </trans-unit>
+      <trans-unit id="account.passwordConfirmPlaceholder" datatype="html">
+        <source>******************</source>
+      </trans-unit>
+      <trans-unit id="account.phoneLabel" datatype="html">
+        <source>Numéro de téléphone</source>
+      </trans-unit>
+      <trans-unit id="account.phonePlaceholder" datatype="html">
+        <source>6 12 34 56 78</source>
+      </trans-unit>
+      <trans-unit id="account.newsletterLabel" datatype="html">
+        <source>Je souhaite recevoir les nouvelles de Novicom.</source>
+      </trans-unit>
+      <trans-unit id="account.createButton" datatype="html">
+        <source> Créer mon compte </source>
+      </trans-unit>
+      <trans-unit id="account.loginTitle" datatype="html">
+        <source>S&apos;authentifier</source>
+      </trans-unit>
+      <trans-unit id="account.loginButton" datatype="html">
+        <source> Se connecter </source>
       </trans-unit>
     </body>
   </file>

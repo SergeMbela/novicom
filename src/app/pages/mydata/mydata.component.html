@@ -1,0 +1,12 @@
+<div class="container" style="padding: 2rem;">
+  <h1>Mes Informations</h1>
+  <div *ngIf="user; else notConnected">
+    <!-- Les données personnalisées sont dans user_metadata -->
+    <p><strong>Prénom :</strong> {{ user.user_metadata['first_name'] }}</p>
+    <p><strong>Nom :</strong> {{ user.user_metadata['last_name'] }}</p>
+    <p><strong>Email :</strong> {{ user.email }}</p>
+  </div>
+  <ng-template #notConnected>
+    <p>Vous n'êtes pas connecté ou les informations sont indisponibles.</p>
+  </ng-template>
+</div>

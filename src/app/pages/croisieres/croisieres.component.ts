@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-croisieres',
   standalone: true,
   imports: [],
-  template: `<h1 class="text-2xl font-bold">Page Croisières</h1>`,
-  styles: ``,
+  templateUrl: './croisieres.component.html',
+  styleUrls: ['./croisieres.component.css'],
 })
 export class CroisieresComponent {}

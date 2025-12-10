@@ -1,12 +1,12 @@
 <div class="container mx-auto p-8">
-  <h2 class="text-3xl font-bold text-center mb-8">Nos destinations populaires</h2>
+  <h2 class="text-3xl font-bold text-center mb-8" i18n="@@home.popularDestinations">Nos destinations populaires</h2>
 
   <!-- Champ de recherche -->
   <div class="mb-8 max-w-md mx-auto">
     <input type="text" 
            [(ngModel)]="searchTerm" 
            (input)="filterDestinations()"
-           placeholder="Rechercher une destination (ex: Rome, Japon...)"
+           placeholder="Rechercher une destination (ex: Rome, Japon...)" i18n-placeholder="@@home.searchPlaceholder"
            class="w-full px-4 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-color">
   </div>
 
@@ -16,8 +16,8 @@
     <!-- Boucle sur chaque destination -->
     <div *ngFor="let dest of filteredDestinations" class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
       
-      <!-- Image de la vignette -->
-      <img [src]="dest.imageUrl" [alt]="'Image de ' + dest.location" class="w-full h-56 object-cover">
+      <!-- Image de la vignette (l'attribut alt est aussi traduisible) -->
+      <img [src]="dest.imageUrl" [alt]="'Image de ' + dest.location" i18n-alt="@@home.imageAlt" class="w-full h-56 object-cover">
 
       <!-- Contenu de la vignette -->
       <div class="p-6">
@@ -25,6 +25,9 @@
         <!-- Lieu et Pays -->
         <h3 class="text-2xl font-bold text-gray-800">{{ dest.location }}</h3>
         <p class="text-sm text-gray-600 mb-3">{{ dest.country }}</p>
+
+        <!-- Description -->
+        <p class="text-gray-700 text-sm mb-4 h-10">{{ dest.description }}</p>
 
         <!-- Étoiles de satisfaction -->
         <div class="flex items-center mb-4">
@@ -38,14 +41,22 @@
 
         <!-- Jours et Prix -->
         <div class="flex justify-between items-center">
-          <span class="text-gray-700 font-medium">{{ dest.days }} jours</span>
+          <span class="text-gray-700 font-medium" i18n="@@home.daysCount">{{ dest.days }} jours</span>
           <span class="text-xl font-bold text-secondary-color">{{ dest.price }} €</span>
         </div>
 
         <!-- Bouton Commander -->
         <div class="mt-6 text-center">
-          <button (click)="order(dest)" class="bg-primary-color text-white font-bold py-2 px-6 rounded-full hover:bg-primary-dark-color transition-colors duration-300">
+          <button (click)="order(dest)" class="bg-primary-color text-white font-bold py-2 px-6 rounded-full hover:bg-primary-dark-color transition-colors duration-300" i18n="@@home.orderButton">
             Commander
+          </button>
+          <!-- Bouton icône pour ajouter au panier -->
+          <button (click)="addToCart(dest)" 
+                  class="ml-4 p-3 bg-blue-500 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                  aria-label="Ajouter au panier" i18n-aria-label="@@home.addToCartAriaLabel">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.744-.648l3-9a.75.75 0 00-.744-.852H5.25l-.308-1.159A.75.75 0 004.2 2.25H2.25zM16.5 18.75a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.75 18.75a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+            </svg>
           </button>
         </div>
       </div>

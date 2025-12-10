@@ -33,7 +33,5 @@ ul {
 /* WARNING: This will make the text invisible due to white text on a white background. */
 .active-tab {
     background-color: white;
-    color: white;
+    color: var(--primary-color); /* Example: Use your primary color for active tab text */
 }
-
-@import "flag-icons/css/flag-icons.min.css";
