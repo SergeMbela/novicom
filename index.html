@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3dVoyage | Agence de Voyage Premium</title>
+    <meta name="description" content="Découvrez des destinations d'exception avec 3dVoyage. Une expérience immersive pour vos futurs périples.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header id="main-header">
+        <div class="container nav">
+            <a href="#" class="logo">
+                3d<span class="gold">Voyage Novicom</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link active">Accueil</a></li>
+                <li><a href="#destinations" class="nav-link">Destinations</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">À Propos</a></li>
+                <li class="social-links-container">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                </li>
+            </ul>
+            <button id="hamburger-menu" class="hamburger-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-loader" id="hero-loader"></div>
+        <div class="hero-slider">
+            <video class="hero-slide active" src="video/hero.mp4" autoplay loop muted playsinline></video>
+            <video class="hero-slide" src="video/africa.mp4" autoplay loop muted playsinline></video>
+            <video class="hero-slide" src="video/playa.mp4" autoplay loop muted playsinline></video>
+        </div>
+        <div class="hero-content">
+            <span class="hero-subtitle">Explorez l'Inconnu</span>
+            <h1 class="hero-title">L'Art du <br> <span class="gold-text">Voyage Prime</span></h1>
+            <a href="#globe-exploration" class="hero-cta">Explorer le Monde</a>
+        </div>
+    </section>
+
+    <!-- 3D Globe Section -->
+    <section id="globe-exploration" class="globe-section">
+        <div class="container flex-center">
+            <div class="section-header">
+                <h2 class="section-title">Exploration Interactive</h2>
+                <p>Naviguez sur notre globe holographique pour découvrir vos prochaines destinations.</p>
+            </div>
+            <div id="canvas-container"></div>
+        </div>
+    </section>
+
+    <!-- Animated Journey Sequence -->
+    <section id="journey" class="journey-section">
+        <div class="journey-slider">
+            <!-- Slide 1: Beach -->
+            <div class="journey-slide active">
+                <div class="slide-bg" style="background-image: url('beach.png');"></div>
+                <div class="slide-overlay">
+                    <div class="container slide-content">
+                        <span class="gold-text">L'Évasion Pure</span>
+                        <h2>Plages Paradisiaques</h2>
+                        <p>Le calme absolu d'un matin doré sur des côtes d'exception.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2: Desert -->
+            <div class="journey-slide">
+                <div class="slide-bg" style="background-image: url('desert.png');"></div>
+                <div class="slide-overlay">
+                    <div class="container slide-content">
+                        <span class="gold-text">L'Esprit des Dunes</span>
+                        <h2>L'Odyssée du Désert</h2>
+                        <p>Une traversée hors du temps au cœur des sables éternels.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3: Airport -->
+            <div class="journey-slide">
+                <div class="slide-bg" style="background-image: url('airport.png');"></div>
+                <div class="slide-overlay">
+                    <div class="container slide-content">
+                        <span class="gold-text">Le Grand Départ</span>
+                        <h2>L'Effervescence Globale</h2>
+                        <p>Ressentez l'énergie des hubs mondiaux avant votre envol.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Destinations Populaires</h2>
+                <p>Découvrez nos sélections exclusives pour des moments inoubliables.</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <!-- Card 1 -->
+                <div class="dest-card">
+                    <img src="kyoto.png" alt="Kyoto, Japan" class="dest-image" loading="lazy">
+                    <div class="dest-content">
+                        <span class="dest-tag">Japon</span>
+                        <h3 class="dest-name">Kyoto Éternel</h3>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="dest-card">
+                    <img src="iceland.png" alt="Iceland" class="dest-image" loading="lazy">
+                    <div class="dest-content">
+                        <span class="dest-tag">Islande</span>
+                        <h3 class="dest-name">Terres de Glace</h3>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="dest-card">
+                    <img src="sahara.png" alt="Sahara, Morocco" class="dest-image" loading="lazy">
+                    <div class="dest-content">
+                        <span class="dest-tag">Maroc</span>
+                        <h3 class="dest-name">Dunes du Sahara</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Why Us Section -->
+    <section id="services" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="destinations-grid">
+                <div class="about-item">
+                    <h3 class="gold-text">01. Excellence</h3>
+                    <p>Un service personnalisé pour chaque voyageur, assurant un confort inégalé.</p>
+                </div>
+                <div class="about-item">
+                    <h3 class="gold-text">02. Immersion</h3>
+                    <p>Des expériences authentiques au cœur des cultures locales.</p>
+                </div>
+                <div class="about-item">
+                    <h3 class="gold-text">03. Sérénité</h3>
+                    <p>Une logistique fluide pour que vous puissiez vous concentrer sur l'essentiel : le voyage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Clients Section -->
+    <section id="our-clients" class="section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="gold-text">Prestige & Confiance</span>
+                <h2 class="section-title">Ils nous font confiance</h2>
+            </div>
+            <div class="clients-grid">
+                <div class="client-card">
+                    <div class="client-image-wrapper">
+                        <img src="client_family_1774347420399.png" alt="Famille Voyage" loading="lazy">
+                    </div>
+                    <div class="client-info">
+                        <span class="gold-text">Familles</span>
+                        <p>"Des souvenirs inoubliables pour petits et grands."</p>
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-image-wrapper">
+                        <img src="client_retirees_1774347437859.png" alt="Retraités Voyage" loading="lazy">
+                    </div>
+                    <div class="client-info">
+                        <span class="gold-text">Séniors</span>
+                        <p>"Le confort et l'élégance à chaque étape."</p>
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-image-wrapper">
+                        <img src="client_newlyweds_1774347452595.png" alt="Jeunes Mariés" loading="lazy">
+                    </div>
+                    <div class="client-info">
+                        <span class="gold-text">Mariés</span>
+                        <p>"Une lune de miel au-delà de nos rêves."</p>
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-image-wrapper">
+                        <img src="client_backpacker_1774347468976.png" alt="Routard" loading="lazy">
+                    </div>
+                    <div class="client-info">
+                        <span class="gold-text">Routards</span>
+                        <p>"L'aventure brute avec une touche de luxe."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="logo">
+                3d<span class="gold">Voyage Novicom</span>
+            </a>
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2026 3dVoyage Novicom Agency. Tous droits réservés.</p>
+            <div class="footer-legal" style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.6;">
+                <a href="legal.html" style="color: white; text-decoration: none; margin: 0 10px;">Conditions Générales</a> | 
+                <a href="legal.html" style="color: white; text-decoration: none; margin: 0 10px;">Données Personnelles</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Destination Modal -->
+    <div id="destination-modal" class="modal">
+        <div class="modal-content angled-frame">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <span id="modal-tag" class="gold-text"></span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <div class="modal-actions">
+                    <a href="reserver.html" class="hero-cta">Réserver ce voyage</a>
+                </div>
+            </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Remonter en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="app.js?v=1.2" defer></script>
+</body>
+</html>
