@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    --primary-color: #030303;
+    --secondary-color: #FF5722;
+    --background-color: #F5F5F5;
+    --text-color: #212121;
+    --font-family: 'Roboto', sans-serif;
+}html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+}
+p {
+    color: var(--text-color);
+}
+a {
+    color: var(--primary-color);
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Styling for active tabs as requested */
+.active-tab {
+    background-color: white;
+    color: var(--primary-color); /* Black text on white background */
+}

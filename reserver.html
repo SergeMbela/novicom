@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver votre Voyage | 3dVoyage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .booking-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            padding: 80px 20px;
+        }
+        .booking-card {
+            max-width: 800px;
+            width: 100%;
+            background: var(--bg-secondary);
+            padding: 4rem;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+            box-shadow: 0 0 50px rgba(var(--accent-gold-rgb), 0.1);
+        }
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-group.full {
+            grid-column: 1 / span 2;
+        }
+        label {
+            color: var(--accent-gold);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        input, select, textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-dim);
+            padding: 1rem;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition-fast);
+        }
+        input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+        .back-link:hover {
+            color: var(--accent-gold);
+        }
+        @media (max-width: 768px) {
+            .booking-form {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full {
+                grid-column: 1;
+            }
+            .booking-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="container nav">
+            <a href="index.html" class="logo">
+                3d<span class="gold">Voyage Novicom</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="booking-hero">
+        <div class="booking-card angled-frame">
+            <span class="gold-text">Finalisez votre projet</span>
+            <h1 class="hero-title" style="font-size: 3rem;">Réservation Premiun</h1>
+            <p>Remplissez ce formulaire et l'un de nos conseillers vous contactera sous 24h pour personnaliser votre itinéraire d'exception.</p>
+
+            <form class="booking-form">
+                <div class="form-group">
+                    <label>Nom Complet</label>
+                    <input type="text" placeholder="Ex: Jean Dupont" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="jean@exemple.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Destination souhaitée</label>
+                    <select>
+                        <option>Kyoto Éternel</option>
+                        <option>Terres de Glace</option>
+                        <option>Dunes du Sahara</option>
+                        <option>Cœur de l'Amazonie</option>
+                        <option>Baie de Sydney</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date de départ estimée</label>
+                    <input type="date">
+                </div>
+                <div class="form-group full">
+                    <label>Demandes particulières</label>
+                    <textarea rows="4" placeholder="Détails, préférences, budget..."></textarea>
+                </div>
+                <div class="form-group full" style="margin-top: 1rem;">
+                    <button type="submit" class="hero-cta" style="width: 100%; cursor: pointer;">Confirmer la demande</button>
+                </div>
+            </form>
+
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Retour à l'exploration</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 3dVoyage Novicom Agency. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
